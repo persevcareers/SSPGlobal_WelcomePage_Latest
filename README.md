@@ -1,2 +1,2 @@
 # SSP_Welcome_Page
-These SSP GLOBEL PVT LIMITED welcome page
+This is the SSP GLOBEAL PRIVATE LIMITED welcome page
