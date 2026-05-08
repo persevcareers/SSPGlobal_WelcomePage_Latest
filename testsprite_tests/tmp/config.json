@@ -1,0 +1,23 @@
+{
+  "status": "commited",
+  "type": "frontend",
+  "scope": "codebase",
+  "localEndpoint": "http://localhost:5173",
+  "executionArgs": {
+    "projectName": "W-4",
+    "projectPath": "c:\\Users\\Admin\\Music\\W-4",
+    "testIds": [
+      "TC001",
+      "TC003",
+      "TC008",
+      "TC011",
+      "TC020"
+    ],
+    "additionalInstruction": "Only run these 5 selected tests. The app is running at http://localhost:5174/",
+    "serverMode": "development",
+    "envs": {
+      "API_KEY": "sk-user-utwrYL5kwOzQkY0qJBWqQniDXWA0H9VWcSoa8dCe00-bdNdZeLrj-Ddf9HJyfzQYFsSY4cDwEjhNj5viR4HpZN9Yp5HlR1904TQ86CpnV9AhSoUXqygmOfSalagbRDJ8Tqc"
+    }
+  },
+  "serverPort": 52480
+}

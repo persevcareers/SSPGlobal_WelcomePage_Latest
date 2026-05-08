@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SSP Global | Welcome</title>
+  <meta name="description" content="Welcome to SSP Global. Empowering the future through technology, education, and innovation. Home to Training, Placements and Software Solutions." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;600;700;800&family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="preload" href="/Frame/frame_000_delay-0.041s.png" as="image" />
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="header" id="header">
+    <div class="header-inner">
+      <a href="#" class="header-logo" id="header-logo" style="display: flex; align-items: center; justify-content: flex-start; width: 260px; height: 90px; overflow: hidden;">
+        <img src="/images/SSP.png" alt="SSP Global" style="height: 210px; object-fit: contain; mix-blend-mode: multiply;" onerror="this.outerHTML='<span class=\'logo-text\' style=\'font-weight:800; font-style:italic;\'>SSP GLOBAL</span>'" />
+      </a>
+      <nav class="header-nav" id="header-nav">
+        <ul>
+          <li><a href="#" class="active">Home</a></li>
+          <li><a href="#s-split">Training</a></li>
+          <li><a href="#">Placements</a></li>
+          <li><a href="#">Software Solutions</a></li>
+          <li><a href="#leadership">Leadership</a></li>
+        </ul>
+        <div class="header-phone">
+          <a href="#contact">Contact Us</a>
+        </div>
+      </nav>
+      <div class="header-cta">
+        <a href="#leadership" class="btn btn-orange" id="header-cta-btn">Meet Our Team</a>
+      </div>
+      <button class="header-burger" id="header-burger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO SECTION -->
+    <!-- HERO SECTION -->
+    <section class="hero" id="hero">
+      <!-- Canvas for frame-by-frame animation -->
+      <canvas id="hero-canvas"></canvas>
+      
+      <!-- Content wrapper for the 3 scroll phases -->
+      <div class="hero-content-wrapper">
+        <!-- Phase 1 -->
+        <div class="hero-phase phase-1">
+          <h1 class="hero-giant-title" id="hero-ssp-title"><span class="hero-s hero-s-lead" id="hero-s1">S</span><span class="hero-s" id="hero-s2">S</span><span class="hero-p" id="hero-p">P</span></h1>
+        </div>
+
+        <!-- Phase 2 -->
+        <div class="hero-phase phase-2">
+          <div class="hero-content">
+            <h2 class="hero-title">
+              <span class="line">Empowering the future</span>
+              <span class="line">through technology,</span>
+              <span class="line">education & innovation.</span>
+            </h2>
+            <div class="hero-cta-top" style="margin-top: 30px;">
+              <a href="#leadership" class="btn btn-border">Explore SSP Global</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Phase 3 -->
+        <div class="hero-phase phase-3">
+          <h2 class="hero-page3-title">
+            <span class="line">A software</span>
+            <span class="line">Organization</span>
+            <span class="line">in Tirupati</span>
+          </h2>
+        </div>
+      </div>
+    </section>
+
+    <!-- S-SPLIT TRANSITION SECTION -->
+    <section class="s-split-section" id="s-split" style="min-height: auto;">
+      <div class="s-split-inner" style="flex-direction: column; padding-top: clamp(60px, 6vw, 80px); padding-bottom: clamp(60px, 6vw, 80px);">
+        
+        <h2 style="font-family: var(--font-mulish); font-weight: 800; font-size: clamp(36px, 4.5vw, 72px); color: var(--dark); text-align: center; margin-bottom: clamp(40px, 4vw, 80px); letter-spacing: 0.02em; text-transform: uppercase;" data-fade="up">WELCOME TO SSP</h2>
+
+        <!-- Two cards revealed after split -->
+        <div class="s-split-cards" id="s-split-cards">
+          <a href="https://www.ssptechedu.com/" target="_blank" class="s-card s-card-left" id="s-card-sti" style="--theme-color: 15 89% 50%;">
+            <div class="s-card-bg" style="background-image: url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
+            <div class="s-card-overlay"></div>
+            <div class="s-card-content">
+              <h3 class="s-card-title">STI</h3>
+              <div class="s-card-stats">Software Training Institute</div>
+              <p style="font-family: var(--font-inter); font-size: 0.875rem; color: rgba(255,255,255,0.9); margin-top: 1rem; line-height: 1.4;">Hands-on tech education for the future workforce. Real projects, expert mentors, lifetime support.</p>
+              <div class="s-card-button">
+                <span class="s-card-btn-text">Explore Training</span>
+                <svg class="s-card-btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+              </div>
+            </div>
+          </a>
+          <a href="#" class="s-card s-card-right" id="s-card-ssp" style="--theme-color: 210 100% 50%;">
+            <div class="s-card-bg" style="background-image: url('https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
+            <div class="s-card-overlay"></div>
+            <div class="s-card-content">
+              <h3 class="s-card-title">SS</h3>
+              <div class="s-card-stats">Software Solutions</div>
+              <p style="font-family: var(--font-inter); font-size: 0.875rem; color: rgba(255,255,255,0.9); margin-top: 1rem; line-height: 1.4;">Cutting-edge software development and digital transformation for businesses of all scales.</p>
+              <div class="s-card-button">
+                <span class="s-card-btn-text">Explore Solutions</span>
+                <svg class="s-card-btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- LEADERSHIP SECTION (HORIZONTAL SLIDER) -->
+    <section class="projects" id="leadership">
+      <div class="projects-container">
+        <div class="projects-header" style="text-align: center; display: flex; flex-direction: column; align-items: center; margin-bottom: 20px;">
+          <div style="background-color: #f0f8fb; color: #00a8cc; font-family: var(--font-inter); font-size: 13px; font-weight: 700; padding: 6px 16px; border-radius: 20px; margin-bottom: 16px; letter-spacing: 0.05em;">VISIONARIES</div>
+          <h2 style="font-family: var(--font-inter), sans-serif; font-size: clamp(32px, 5vw, 60px); font-weight: 800; color: #0a192f; margin-bottom: 20px; line-height: 1.1; letter-spacing: -0.02em;" data-fade="up">Leadership Behind SSP</h2>
+          <p style="font-family: var(--font-inter); font-size: clamp(16px, 1.5vw, 20px); color: #4a5568; margin-bottom: 8px; line-height: 1.5;">Driven by experience. Focused on student success.<br>Meet the mentors shaping the future of engineering.</p>
+        </div>
+        
+        <div style="display: flex; flex-direction: column; gap: 60px; max-width: 900px; margin: 0 auto; padding-top: 40px;">
+          
+          <!-- Leader 1 - CEO -->
+          <div style="display: flex; flex-direction: row; overflow: visible; align-items: center; flex-wrap: wrap; gap: 40px;">
+            <div style="flex-shrink: 0; width: 280px; position: relative;">
+              <img src="/images/Sai Charan V P.png" alt="Sai Charan V P" style="width: 100%; aspect-ratio: 1/1; object-fit: cover; border-radius: 24px; border: 6px solid #ffffff; box-shadow: -12px -12px 0px #eaf8f9, 0 10px 20px rgba(0,0,0,0.05);" />
+              <div style="position: absolute; bottom: 10px; right: -15px; background: white; width: 44px; height: 44px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); display: flex; align-items: center; justify-content: center; font-size: 20px; color: #00b4d8; font-weight: bold; line-height: 1;">❞</div>
+            </div>
+            <div style="flex-grow: 1; position: relative; display: flex; flex-direction: column; justify-content: center; min-width: 300px; max-width: 500px;">
+              <div style="position: absolute; top: -15px; left: -25px; font-size: 45px; color: #eef2f5; font-family: serif; line-height: 1; pointer-events: none;">❝</div>
+              <p style="font-family: var(--font-inter); font-size: 18px; color: #222; line-height: 1.5; font-weight: 500; margin-bottom: 24px; position: relative; z-index: 1;">Our mission is to turn skills into confidence and confidence into careers. We are here to bridge the gap between academic learning and industry demands.</p>
+              <div style="display: flex; flex-direction: column;">
+                <div style="display: flex; align-items: center; margin-bottom: 4px;">
+                  <span style="width: 30px; height: 2px; background-color: #00b4d8; margin-right: 12px;"></span>
+                  <strong style="font-family: var(--font-inter); font-size: 16px; color: #000;">Sai Charan V P</strong>
+                </div>
+                <span style="font-family: var(--font-inter); font-size: 10px; font-weight: 800; color: #00b4d8; text-transform: uppercase; margin-left: 42px; letter-spacing: 0.05em;">CEO</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Leader 2 - Director -->
+          <div style="display: flex; flex-direction: row; overflow: visible; align-items: center; flex-wrap: wrap; gap: 40px;">
+            <div style="flex-shrink: 0; width: 280px; position: relative;">
+              <img src="/images/Manoj Kumar G.png" alt="Manoj Kumar G" style="width: 100%; aspect-ratio: 1/1; object-fit: cover; border-radius: 24px; border: 6px solid #ffffff; box-shadow: -12px -12px 0px #eaf8f9, 0 10px 20px rgba(0,0,0,0.05);" />
+              <div style="position: absolute; bottom: 10px; right: -15px; background: white; width: 44px; height: 44px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); display: flex; align-items: center; justify-content: center; font-size: 20px; color: #00b4d8; font-weight: bold; line-height: 1;">❞</div>
+            </div>
+            <div style="flex-grow: 1; position: relative; display: flex; flex-direction: column; justify-content: center; min-width: 300px; max-width: 500px;">
+              <div style="position: absolute; top: -15px; left: -25px; font-size: 45px; color: #eef2f5; font-family: serif; line-height: 1; pointer-events: none;">❝</div>
+              <p style="font-family: var(--font-inter); font-size: 18px; color: #222; line-height: 1.5; font-weight: 500; margin-bottom: 24px; position: relative; z-index: 1;">We don't train students for exams — we prepare them for real industry challenges. Quality education is about empowerment, not just certification.</p>
+              <div style="display: flex; flex-direction: column;">
+                <div style="display: flex; align-items: center; margin-bottom: 4px;">
+                  <span style="width: 30px; height: 2px; background-color: #00b4d8; margin-right: 12px;"></span>
+                  <strong style="font-family: var(--font-inter); font-size: 16px; color: #000;">Manoj Kumar G</strong>
+                </div>
+                <span style="font-family: var(--font-inter); font-size: 10px; font-weight: 800; color: #00b4d8; text-transform: uppercase; margin-left: 42px; letter-spacing: 0.05em;">DIRECTOR</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Leader 3 - Founder -->
+          <div style="display: flex; flex-direction: row; overflow: visible; align-items: center; flex-wrap: wrap; gap: 40px;">
+            <div style="flex-shrink: 0; width: 280px; position: relative;">
+              <img src="/images/Praveen Kumar G.png" alt="Praveen Kumar G" style="width: 100%; aspect-ratio: 1/1; object-fit: cover; border-radius: 24px; border: 6px solid #ffffff; box-shadow: -12px -12px 0px #eaf8f9, 0 10px 20px rgba(0,0,0,0.05);" />
+              <div style="position: absolute; bottom: 10px; right: -15px; background: white; width: 44px; height: 44px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); display: flex; align-items: center; justify-content: center; font-size: 20px; color: #00b4d8; font-weight: bold; line-height: 1;">❞</div>
+            </div>
+            <div style="flex-grow: 1; position: relative; display: flex; flex-direction: column; justify-content: center; min-width: 300px; max-width: 500px;">
+              <div style="position: absolute; top: -15px; left: -25px; font-size: 45px; color: #eef2f5; font-family: serif; line-height: 1; pointer-events: none;">❝</div>
+              <p style="font-family: var(--font-inter); font-size: 18px; color: #222; line-height: 1.5; font-weight: 500; margin-bottom: 24px; position: relative; z-index: 1;">SSP was built to create ethical, skilled engineers who are ready for the real world. Integrity and perseverance are at the core of everything we do.</p>
+              <div style="display: flex; flex-direction: column;">
+                <div style="display: flex; align-items: center; margin-bottom: 4px;">
+                  <span style="width: 30px; height: 2px; background-color: #00b4d8; margin-right: 12px;"></span>
+                  <strong style="font-family: var(--font-inter); font-size: 16px; color: #000;">Praveen Kumar G</strong>
+                </div>
+                <span style="font-family: var(--font-inter); font-size: 10px; font-weight: 800; color: #00b4d8; text-transform: uppercase; margin-left: 42px; letter-spacing: 0.05em;">FOUNDER</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURES SECTION -->
+    <section class="locations" id="locations">
+      <div class="locations-container">
+        <h3 class="section-title" data-fade="up">Why Choose SSP?</h3>
+        <div class="locations-grid">
+          <div class="location-card" data-fade="up">
+            <div class="location-image">
+              <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Real World Training" />
+              <div class="location-label">Hands-On Practice</div>
+            </div>
+            <div class="location-details">
+              <h4>Real-World Training</h4>
+              <p class="location-address">Modern curriculum with dedicated hands-on labs and real-time projects.</p>
+              <a href="#" class="location-phone">Learn More</a>
+            </div>
+          </div>
+          <div class="location-card" data-fade="up">
+            <div class="location-image">
+              <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Career Support" />
+              <div class="location-label">Placement Support</div>
+            </div>
+            <div class="location-details">
+              <h4>Career Guidance</h4>
+              <p class="location-address">Resume building, mock interviews, and end-to-end placement assistance.</p>
+              <a href="#" class="location-phone">Learn More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MANAGEMENT SECTION -->
+    <section class="management" id="management">
+      <div class="management-container">
+        <h2 class="section-title" data-fade="up">Student Success</h2>
+        <div class="management-content">
+          <div class="management-image" data-fade="up">
+            <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Students Learning" />
+          </div>
+          <div class="management-accordion">
+            <div class="accordion-item active" data-fade="up">
+              <div class="accordion-header">
+                <span class="accordion-num">01</span>
+                <h4 class="accordion-title">Individual Tracking</h4>
+                <span class="accordion-toggle">+</span>
+              </div>
+              <div class="accordion-body">
+                <div class="accordion-body-inner">
+                  <p>Personalized progress monitoring and mentor feedback to ensure you stay on track and continuously improve.</p>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item" data-fade="up">
+              <div class="accordion-header">
+                <span class="accordion-num">02</span>
+                <h4 class="accordion-title">Standalone Mindset</h4>
+                <span class="accordion-toggle">+</span>
+              </div>
+              <div class="accordion-body">
+                <div class="accordion-body-inner">
+                  <p>We build independent problem-solving skills that allow you to tackle complex challenges and thrive in a professional environment.</p>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item" data-fade="up">
+              <div class="accordion-header">
+                <span class="accordion-num">03</span>
+                <h4 class="accordion-title">Lifetime Support</h4>
+                <span class="accordion-toggle">+</span>
+              </div>
+              <div class="accordion-body">
+                <div class="accordion-body-inner">
+                  <p>Continuous guidance whenever you need it. Our relationship doesn't end with a job placement; we're here for your entire career journey.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section class="contact" id="contact">
+      <div class="contact-container">
+        <h2 class="section-title" data-fade="up">Talk to a Mentor</h2>
+        <p class="contact-subtitle" data-fade="up">No pressure. Just clarity. Leave your contacts and we will reach out to you.</p>
+        <form class="contact-form" id="contact-form" data-fade="up">
+          <div class="form-group">
+            <input type="text" id="form-name" placeholder="Your Name" required />
+          </div>
+          <div class="form-group">
+            <input type="tel" id="form-phone" placeholder="Phone Number" required />
+          </div>
+          <button type="submit" class="btn btn-orange">Enquire Now</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer" id="footer">
+    <div class="footer-inner">
+      <div class="footer-col footer-about">
+        <a href="#" class="footer-logo" style="display: flex; align-items: center; justify-content: center; width: 380px; height: 150px; overflow: hidden; margin-bottom: 24px; margin-left: -30px;">
+          <img src="/images/SSP.jpeg" alt="SSP Global" style="height: 450px; object-fit: contain; filter: brightness(0) invert(1);" onerror="this.outerHTML='<span class=\'footer-logo-text\' style=\'font-weight:800; font-style:italic;\'>SSP GLOBAL</span>'" />
+        </a>
+        <p>A visionary corporate group empowering individuals and businesses through specialized education and cutting-edge tech solutions.</p>
+      </div>
+      <div class="footer-col footer-menu">
+        <h5 class="footer-heading">Divisions</h5>
+        <ul>
+          <li><a href="https://www.ssptechedu.com/">Training</a></li>
+          <li><a href="#">Placements</a></li>
+          <li><a href="#">Software Solutions</a></li>
+          <li><a href="#leadership">Leadership</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col footer-contacts">
+        <h5 class="footer-heading">Contact</h5>
+        <a href="tel:919035011859" class="footer-phone">+91-9035011859</a>
+        <a href="mailto:persevcareers@gmail.com" class="footer-email">persevcareers@gmail.com</a>
+        <p style="color: rgba(255,255,255,.7); margin-top: 8px; font-size: 15px;">Annamaiah Circle, Beside DMART,<br>AIR Bypass Road, Tirupati</p>
+        <h5 class="footer-heading mt">Socials</h5>
+        <div class="social-icons">
+          <a href="https://www.instagram.com/ssperseverance_institute/" target="_blank" aria-label="Instagram"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/></svg></a>
+          <a href="https://www.facebook.com/p/Perseverance-Software-Institute-61550316355738/" target="_blank" aria-label="Facebook"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+          <a href="https://www.youtube.com/@persevcareers6577" target="_blank" aria-label="YouTube"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19.1c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span class="footer-copy">©2026 SSP Global. All rights reserved.</span>
+        <span class="footer-credit">Designed for SSP Global</span>
+      </div>
+      <div class="footer-line"></div>
+      <div class="footer-disclaimer">
+        <p>Empowering the future through technology, education & innovation. SSP Global encompasses Training, Placements and Software Solutions.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="/main.js"></script>
+</body>
+</html>

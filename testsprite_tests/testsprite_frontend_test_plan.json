@@ -1,0 +1,729 @@
+[
+  {
+    "id": "TC001",
+    "title": "Open homepage and reach the first hero phase",
+    "description": "This test verifies that a visitor can load the homepage, see the interactive hero begin, and observe the first messaging phase as they scroll.",
+    "category": "Interactive Hero Canvas",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the hero experience is displayed"
+      },
+      {
+        "type": "action",
+        "description": "Scroll down through the hero area"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the first hero messaging phase is visible"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC002",
+    "title": "View the interactive hero experience",
+    "description": "This test verifies that the homepage hero area loads its interactive canvas and phased messaging for a first-time visitor.",
+    "category": "Hero Experience",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the hero canvas animation is displayed"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify phased hero messaging is visible"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC003",
+    "title": "Use sticky navigation to jump to key sections",
+    "description": "This test verifies that a visitor can use the sticky header links to move between major sections on the homepage.",
+    "category": "Sticky Navigation",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Click the navigation link for a major section"
+      },
+      {
+        "type": "action",
+        "description": "Click another navigation link for a different section"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the page scrolls to the selected sections"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the sticky navigation remains available during browsing"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC004",
+    "title": "Advance through the hero storytelling sequence",
+    "description": "This test verifies that continued scrolling advances the hero canvas and messaging through the full introductory sequence to the location-focused ending.",
+    "category": "Interactive Hero Canvas",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Scroll down through the hero area"
+      },
+      {
+        "type": "action",
+        "description": "Continue scrolling through the hero area"
+      },
+      {
+        "type": "action",
+        "description": "Continue scrolling through the hero area"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the hero canvas animation advances with scrolling"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the final location-focused hero message is visible"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC005",
+    "title": "Use sticky navigation to jump to a key section",
+    "description": "This test verifies that the sticky header remains usable while scrolling and can move the visitor to a major content section from the navigation links.",
+    "category": "Sticky Header & Responsive Navigation",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Scroll down the page"
+      },
+      {
+        "type": "action",
+        "description": "Open the navigation link for a major section"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the header remains available while scrolling"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the selected section is displayed"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC006",
+    "title": "Use mobile navigation to jump between sections",
+    "description": "This test verifies that a small-screen visitor can open the mobile navigation menu, jump to a section, and continue browsing after the menu closes.",
+    "category": "Mobile Navigation",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Resize the browser to a mobile viewport"
+      },
+      {
+        "type": "action",
+        "description": "Open the mobile navigation menu"
+      },
+      {
+        "type": "action",
+        "description": "Select a section from the mobile navigation menu"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the page scrolls to the selected section"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the mobile navigation menu closes after selection"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC007",
+    "title": "Open the mobile menu and jump to a section",
+    "description": "This test verifies that a mobile visitor can open the navigation menu, choose a section, and arrive there successfully.",
+    "category": "Sticky Header & Responsive Navigation",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Resize the browser to a small mobile viewport"
+      },
+      {
+        "type": "action",
+        "description": "Open the mobile navigation menu"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the mobile navigation links are displayed"
+      },
+      {
+        "type": "action",
+        "description": "Select a section from the mobile navigation menu"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the page scrolls to the selected section"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC008",
+    "title": "View the software training and solutions cards",
+    "description": "This test verifies that scrolling to the Welcome section reveals both division cards so a visitor can compare the company’s two offerings.",
+    "category": "S-Split Transition Section",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Scroll to the Welcome section"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the two division cards are displayed"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the section introduces both software training and software solutions"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC009",
+    "title": "View leadership profiles",
+    "description": "This test verifies that a visitor can scroll to the leadership section and read the leadership cards for the CEO, Director, and Founder.",
+    "category": "Leadership Section",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Scroll to the leadership section"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify leadership profile cards are displayed"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the leadership titles and supporting statements are visible"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC010",
+    "title": "Browse company value propositions",
+    "description": "This test verifies that a visitor can reach the features section and see the company value proposition cards appear in the grid.",
+    "category": "Features Section",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Scroll to the features section"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the value proposition cards are displayed"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the listed benefits are visible"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC011",
+    "title": "Expand a student support item",
+    "description": "This test verifies that a visitor can open a Student Success accordion item and read its description.",
+    "category": "Student Success Accordion",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Scroll to the Student Success section"
+      },
+      {
+        "type": "action",
+        "description": "Expand one accordion item"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the selected accordion item is expanded"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify its description is visible"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC012",
+    "title": "Switch between student support items",
+    "description": "This test verifies that opening a different Student Success accordion item collapses the first one and shows the newly selected description.",
+    "category": "Student Success Accordion",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Scroll to the Student Success section"
+      },
+      {
+        "type": "action",
+        "description": "Expand one accordion item"
+      },
+      {
+        "type": "action",
+        "description": "Expand another accordion item"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify only the newly selected accordion item is expanded"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the previous accordion item is collapsed"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC013",
+    "title": "Hover the training institute card to reveal emphasis",
+    "description": "This test verifies that the software training institute card responds to hover interaction by increasing emphasis and showing its interactive state.",
+    "category": "S-Split Transition Section",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Scroll to the Welcome section"
+      },
+      {
+        "type": "action",
+        "description": "Hover over the training institute card"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the training institute card becomes visually emphasized"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the training institute card’s interactive action is revealed"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC014",
+    "title": "Hover the software solutions card to reveal emphasis",
+    "description": "This test verifies that the software solutions card responds to hover interaction by increasing emphasis and showing its interactive state.",
+    "category": "S-Split Transition Section",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Scroll to the Welcome section"
+      },
+      {
+        "type": "action",
+        "description": "Hover over the software solutions card"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the software solutions card becomes visually emphasized"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the software solutions card’s interactive action is revealed"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC015",
+    "title": "Read all student support principles",
+    "description": "This test verifies that a visitor can expand each Student Success accordion item one at a time and view all three support descriptions.",
+    "category": "Student Success Accordion",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Scroll to the Student Success section"
+      },
+      {
+        "type": "action",
+        "description": "Expand the first accordion item"
+      },
+      {
+        "type": "action",
+        "description": "Expand the second accordion item"
+      },
+      {
+        "type": "action",
+        "description": "Expand the third accordion item"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify each student support principle can be viewed"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the accordion keeps only one item expanded at a time"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC016",
+    "title": "Submit a complete contact inquiry",
+    "description": "This test verifies that a visitor can fill out the contact form with valid details and submit it successfully.",
+    "category": "Contact Form",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Scroll to the contact form"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the name field with a valid full name"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the phone number field with a valid phone number"
+      },
+      {
+        "type": "action",
+        "description": "Submit the contact form"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the form accepts the inquiry"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify a success confirmation is visible"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC017",
+    "title": "Submit a contact inquiry successfully",
+    "description": "This test verifies that a visitor can complete the contact form with a name and phone number and see a successful submission state.",
+    "category": "Contact Form",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Scroll to the contact form"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the name field with Test User"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the phone field with a valid phone number"
+      },
+      {
+        "type": "action",
+        "description": "Submit the contact form"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify a successful submission confirmation is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the form remains usable after submission"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC018",
+    "title": "Complete the contact form after correcting missing input",
+    "description": "This test verifies that a visitor can fix a missing required field and then successfully submit the contact form.",
+    "category": "Contact Form",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Scroll to the contact form"
+      },
+      {
+        "type": "action",
+        "description": "Leave the name field empty"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the phone number field with a valid phone number"
+      },
+      {
+        "type": "action",
+        "description": "Submit the contact form"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the name field with a valid full name"
+      },
+      {
+        "type": "action",
+        "description": "Submit the contact form"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the form accepts the inquiry"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify a success confirmation is visible"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC019",
+    "title": "Show validation when the name is missing",
+    "description": "This test verifies that the contact form blocks submission and indicates missing required information when the name is left empty.",
+    "category": "Contact Form",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Scroll to the contact form"
+      },
+      {
+        "type": "action",
+        "description": "Leave the name field empty"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the phone number field with a valid phone number"
+      },
+      {
+        "type": "action",
+        "description": "Submit the contact form"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify a required-field validation error is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the form is not accepted"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC020",
+    "title": "Show required-field validation for an incomplete contact inquiry",
+    "description": "This test verifies that the contact form shows validation feedback when the visitor tries to submit without the required information.",
+    "category": "Contact Form",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Scroll to the contact form"
+      },
+      {
+        "type": "action",
+        "description": "Submit the contact form without filling required fields"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify required-field validation is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the form is not submitted successfully"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC021",
+    "title": "Show validation when the phone number is missing",
+    "description": "This test verifies that the contact form blocks submission and indicates missing required information when the phone number is left empty.",
+    "category": "Contact Form",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Scroll to the contact form"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the name field with a valid full name"
+      },
+      {
+        "type": "action",
+        "description": "Leave the phone number field empty"
+      },
+      {
+        "type": "action",
+        "description": "Submit the contact form"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify a required-field validation error is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the form is not accepted"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC022",
+    "title": "Block submission when both contact fields are empty",
+    "description": "This test verifies that the contact form requires both fields before allowing submission.",
+    "category": "Contact Form",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Scroll to the contact form"
+      },
+      {
+        "type": "action",
+        "description": "Leave the name field empty"
+      },
+      {
+        "type": "action",
+        "description": "Leave the phone number field empty"
+      },
+      {
+        "type": "action",
+        "description": "Submit the contact form"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify a required-field validation error is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the form is not accepted"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC023",
+    "title": "Close the mobile menu after selecting a section",
+    "description": "This test verifies that the mobile navigation menu closes automatically after a section link is selected and does not stay open over the destination content.",
+    "category": "Sticky Header & Responsive Navigation",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Resize the browser to a small mobile viewport"
+      },
+      {
+        "type": "action",
+        "description": "Open the mobile navigation menu"
+      },
+      {
+        "type": "action",
+        "description": "Select a section from the mobile navigation menu"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the mobile navigation menu is closed"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the selected section is visible"
+      }
+    ],
+    "priority": "Low"
+  }
+]
