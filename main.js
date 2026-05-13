@@ -294,14 +294,26 @@ function initImageReveals() {
 function initFadeUps() {
   const fadeEls = document.querySelectorAll('[data-fade]');
   fadeEls.forEach((el) => {
-    gsap.set(el, { opacity: 0, y: 40 });
+    const type = el.getAttribute('data-fade');
+    let fromVars = { opacity: 0, y: 40 };
+    
+    if (type === 'left') {
+      fromVars = { opacity: 0, x: 40, y: 0 };
+    } else if (type === 'right') {
+      fromVars = { opacity: 0, x: -40, y: 0 };
+    } else if (type === 'up') {
+      fromVars = { opacity: 0, y: 40 };
+    }
+
+    gsap.set(el, fromVars);
+    
     ScrollTrigger.create({
       trigger: el,
       start: 'top 85%',
       once: true,
       onEnter: () => {
         gsap.to(el, {
-          opacity: 1, y: 0,
+          opacity: 1, x: 0, y: 0,
           duration: 0.8, ease: 'power2.out',
         });
       },
