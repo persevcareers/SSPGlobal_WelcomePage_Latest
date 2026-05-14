@@ -226,89 +226,190 @@
         </div>
 
         <!-- Service Grid -->
+        <style>
+          .pro-card {
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 24px;
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            border: 1px solid #f1f5f9;
+            box-shadow: 0 10px 30px -15px rgba(0, 0, 0, 0.05);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            position: relative;
+            z-index: 1;
+          }
+          .pro-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.08);
+            border-color: var(--card-accent);
+          }
+          .pro-icon {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 28px;
+            color: #1e293b;
+            transition: all 0.4s ease;
+          }
+          .pro-card:hover .pro-icon {
+            color: var(--card-accent);
+            transform: scale(1.1);
+          }
+          .pro-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: auto;
+            list-style: none;
+            padding: 0;
+            border-top: 1px solid #f1f5f9;
+            padding-top: 24px;
+          }
+          .pro-list-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+            font-weight: 600;
+            color: #475569;
+          }
+          .pro-check {
+            width: 16px;
+            height: 16px;
+            color: var(--card-accent);
+            flex-shrink: 0;
+          }
+        </style>
+
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 32px;">
           
           <!-- Web Development -->
-          <div style="background: #f8fafc; padding: 40px; border-radius: 24px; transition: all 0.3s ease; border: 1px solid transparent;" onmouseover="this.style.borderColor='#3b82f6'; this.style.backgroundColor='#ffffff'; this.style.transform='translateY(-10px)'" onmouseout="this.style.borderColor='transparent'; this.style.backgroundColor='#f8fafc'; this.style.transform='translateY(0)'">
-            <div style="width: 64px; height: 64px; background: #e0e7ff; border-radius: 16px; display: flex; align-items: center; justify-content: center; margin-bottom: 24px;">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          <div class="pro-card" style="--card-accent: #3b82f6;">
+            <div class="pro-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
             </div>
-            <h3 style="font-size: 24px; font-weight: 700; color: #0a192f; margin-bottom: 16px;">Web Development</h3>
-            <p style="color: #64748b; line-height: 1.6; margin-bottom: 20px;">Modern, responsive websites and complex web applications built with React, Next.js, and high-performance backends.</p>
-            <ul style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px;">
-              <li style="display: flex; align-items: center; gap: 10px; font-size: 14px; color: #475569;"><span style="color: #3b82f6;">✓</span> E-commerce & SaaS</li>
-              <li style="display: flex; align-items: center; gap: 10px; font-size: 14px; color: #475569;"><span style="color: #3b82f6;">✓</span> Enterprise Portals</li>
-              <li style="display: flex; align-items: center; gap: 10px; font-size: 14px; color: #475569;"><span style="color: #3b82f6;">✓</span> API Architecture</li>
+            <h3 style="font-size: 24px; font-weight: 700; color: #0f172a; margin-bottom: 16px; letter-spacing: -0.01em;">Web Development</h3>
+            <p style="color: #64748b; line-height: 1.6; margin-bottom: 32px; font-size: 15px;">Modern, responsive websites and complex web applications built with React, Next.js, and high-performance backends.</p>
+            <ul class="pro-list">
+              <li class="pro-list-item"><svg class="pro-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> E-commerce & SaaS</li>
+              <li class="pro-list-item"><svg class="pro-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Enterprise Portals</li>
+              <li class="pro-list-item"><svg class="pro-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> API Architecture</li>
             </ul>
           </div>
 
           <!-- AI & Machine Learning -->
-          <div style="background: #f8fafc; padding: 40px; border-radius: 24px; transition: all 0.3s ease; border: 1px solid transparent;" onmouseover="this.style.borderColor='#8b5cf6'; this.style.backgroundColor='#ffffff'; this.style.transform='translateY(-10px)'" onmouseout="this.style.borderColor='transparent'; this.style.backgroundColor='#f8fafc'; this.style.transform='translateY(0)'">
-            <div style="width: 64px; height: 64px; background: #f3e8ff; border-radius: 16px; display: flex; align-items: center; justify-content: center; margin-bottom: 24px;">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8z"/><path d="M12 6v6l4 2"/></svg>
+          <div class="pro-card" style="--card-accent: #8b5cf6;">
+            <div class="pro-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8z"/><path d="M12 6v6l4 2"/></svg>
             </div>
-            <h3 style="font-size: 24px; font-weight: 700; color: #0a192f; margin-bottom: 16px;">AI & ML Solutions</h3>
-            <p style="color: #64748b; line-height: 1.6; margin-bottom: 20px;">Empowering businesses with intelligent automation, predictive analytics, and custom AI models to drive efficiency.</p>
-            <ul style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px;">
-              <li style="display: flex; align-items: center; gap: 10px; font-size: 14px; color: #475569;"><span style="color: #8b5cf6;">✓</span> Predictive Modeling</li>
-              <li style="display: flex; align-items: center; gap: 10px; font-size: 14px; color: #475569;"><span style="color: #8b5cf6;">✓</span> NLP & Chatbots</li>
-              <li style="display: flex; align-items: center; gap: 10px; font-size: 14px; color: #475569;"><span style="color: #8b5cf6;">✓</span> Computer Vision</li>
+            <h3 style="font-size: 24px; font-weight: 700; color: #0f172a; margin-bottom: 16px; letter-spacing: -0.01em;">AI & ML Solutions</h3>
+            <p style="color: #64748b; line-height: 1.6; margin-bottom: 32px; font-size: 15px;">Empowering businesses with intelligent automation, predictive analytics, and custom AI models to drive efficiency.</p>
+            <ul class="pro-list">
+              <li class="pro-list-item"><svg class="pro-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Predictive Modeling</li>
+              <li class="pro-list-item"><svg class="pro-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> NLP & Chatbots</li>
+              <li class="pro-list-item"><svg class="pro-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Computer Vision</li>
             </ul>
           </div>
 
           <!-- Cloud & DevOps -->
-          <div style="background: #f8fafc; padding: 40px; border-radius: 24px; transition: all 0.3s ease; border: 1px solid transparent;" onmouseover="this.style.borderColor='#f59e0b'; this.style.backgroundColor='#ffffff'; this.style.transform='translateY(-10px)'" onmouseout="this.style.borderColor='transparent'; this.style.backgroundColor='#f8fafc'; this.style.transform='translateY(0)'">
-            <div style="width: 64px; height: 64px; background: #fff7ed; border-radius: 16px; display: flex; align-items: center; justify-content: center; margin-bottom: 24px;">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19a3.5 3.5 0 0 0 0-7h-1.5a4.5 4.5 0 1 0-9 0h-1.5a3.5 3.5 0 0 0 0 7z"/></svg>
+          <div class="pro-card" style="--card-accent: #f59e0b;">
+            <div class="pro-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19a3.5 3.5 0 0 0 0-7h-1.5a4.5 4.5 0 1 0-9 0h-1.5a3.5 3.5 0 0 0 0 7z"/></svg>
             </div>
-            <h3 style="font-size: 24px; font-weight: 700; color: #0a192f; margin-bottom: 16px;">Cloud & DevOps</h3>
-            <p style="color: #64748b; line-height: 1.6; margin-bottom: 20px;">Infrastructure setup and automated deployment pipelines to ensure your software is always live and secure.</p>
-            <ul style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px;">
-              <li style="display: flex; align-items: center; gap: 10px; font-size: 14px; color: #475569;"><span style="color: #f59e0b;">✓</span> AWS / Azure Setup</li>
-              <li style="display: flex; align-items: center; gap: 10px; font-size: 14px; color: #475569;"><span style="color: #f59e0b;">✓</span> CI/CD Automation</li>
-              <li style="display: flex; align-items: center; gap: 10px; font-size: 14px; color: #475569;"><span style="color: #f59e0b;">✓</span> Docker Security</li>
+            <h3 style="font-size: 24px; font-weight: 700; color: #0f172a; margin-bottom: 16px; letter-spacing: -0.01em;">Cloud & DevOps</h3>
+            <p style="color: #64748b; line-height: 1.6; margin-bottom: 32px; font-size: 15px;">Infrastructure setup and automated deployment pipelines to ensure your software is always live and secure.</p>
+            <ul class="pro-list">
+              <li class="pro-list-item"><svg class="pro-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> AWS / Azure Setup</li>
+              <li class="pro-list-item"><svg class="pro-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> CI/CD Automation</li>
+              <li class="pro-list-item"><svg class="pro-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Docker Security</li>
             </ul>
           </div>
 
           <!-- Data Analytics -->
-          <div style="background: #f8fafc; padding: 40px; border-radius: 24px; transition: all 0.3s ease; border: 1px solid transparent;" onmouseover="this.style.borderColor='#06b6d4'; this.style.backgroundColor='#ffffff'; this.style.transform='translateY(-10px)'" onmouseout="this.style.borderColor='transparent'; this.style.backgroundColor='#f8fafc'; this.style.transform='translateY(0)'">
-            <div style="width: 64px; height: 64px; background: #ecfeff; border-radius: 16px; display: flex; align-items: center; justify-content: center; margin-bottom: 24px;">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#06b6d4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+          <div class="pro-card" style="--card-accent: #06b6d4;">
+            <div class="pro-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
             </div>
-            <h3 style="font-size: 24px; font-weight: 700; color: #0a192f; margin-bottom: 16px;">Data Analytics</h3>
-            <p style="color: #64748b; line-height: 1.6; margin-bottom: 20px;">Transforming raw data into actionable business intelligence through advanced visualization and processing.</p>
-            <ul style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px;">
-              <li style="display: flex; align-items: center; gap: 10px; font-size: 14px; color: #475569;"><span style="color: #06b6d4;">✓</span> BI Dashboards</li>
-              <li style="display: flex; align-items: center; gap: 10px; font-size: 14px; color: #475569;"><span style="color: #06b6d4;">✓</span> Big Data Processing</li>
-              <li style="display: flex; align-items: center; gap: 10px; font-size: 14px; color: #475569;"><span style="color: #06b6d4;">✓</span> Real-time Monitoring</li>
+            <h3 style="font-size: 24px; font-weight: 700; color: #0f172a; margin-bottom: 16px; letter-spacing: -0.01em;">Data Analytics</h3>
+            <p style="color: #64748b; line-height: 1.6; margin-bottom: 32px; font-size: 15px;">Transforming raw data into actionable business intelligence through advanced visualization and processing.</p>
+            <ul class="pro-list">
+              <li class="pro-list-item"><svg class="pro-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> BI Dashboards</li>
+              <li class="pro-list-item"><svg class="pro-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Big Data Processing</li>
+              <li class="pro-list-item"><svg class="pro-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Real-time Monitoring</li>
             </ul>
           </div>
 
           <!-- Cyber Security -->
-          <div style="background: #f8fafc; padding: 40px; border-radius: 24px; transition: all 0.3s ease; border: 1px solid transparent;" onmouseover="this.style.borderColor='#ef4444'; this.style.backgroundColor='#ffffff'; this.style.transform='translateY(-10px)'" onmouseout="this.style.borderColor='transparent'; this.style.backgroundColor='#f8fafc'; this.style.transform='translateY(0)'">
-            <div style="width: 64px; height: 64px; background: #fef2f2; border-radius: 16px; display: flex; align-items: center; justify-content: center; margin-bottom: 24px;">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          <div class="pro-card" style="--card-accent: #ef4444;">
+            <div class="pro-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
             </div>
-            <h3 style="font-size: 24px; font-weight: 700; color: #0a192f; margin-bottom: 16px;">Cyber Security</h3>
-            <p style="color: #64748b; line-height: 1.6; margin-bottom: 20px;">Protecting your digital assets with advanced threat detection, encryption, and robust security protocols.</p>
-            <ul style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px;">
-              <li style="display: flex; align-items: center; gap: 10px; font-size: 14px; color: #475569;"><span style="color: #ef4444;">✓</span> Threat Assessment</li>
-              <li style="display: flex; align-items: center; gap: 10px; font-size: 14px; color: #475569;"><span style="color: #ef4444;">✓</span> Data Encryption</li>
-              <li style="display: flex; align-items: center; gap: 10px; font-size: 14px; color: #475569;"><span style="color: #ef4444;">✓</span> Security Audits</li>
+            <h3 style="font-size: 24px; font-weight: 700; color: #0f172a; margin-bottom: 16px; letter-spacing: -0.01em;">Cyber Security</h3>
+            <p style="color: #64748b; line-height: 1.6; margin-bottom: 32px; font-size: 15px;">Protecting your digital assets with advanced threat detection, encryption, and robust security protocols.</p>
+            <ul class="pro-list">
+              <li class="pro-list-item"><svg class="pro-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Threat Assessment</li>
+              <li class="pro-list-item"><svg class="pro-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Data Encryption</li>
+              <li class="pro-list-item"><svg class="pro-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Security Audits</li>
             </ul>
           </div>
 
-          <!-- UI/UX Excellence -->
-          <div style="background: #f8fafc; padding: 40px; border-radius: 24px; transition: all 0.3s ease; border: 1px solid transparent;" onmouseover="this.style.borderColor='#ec4899'; this.style.backgroundColor='#ffffff'; this.style.transform='translateY(-10px)'" onmouseout="this.style.borderColor='transparent'; this.style.backgroundColor='#f8fafc'; this.style.transform='translateY(0)'">
-            <div style="width: 64px; height: 64px; background: #fdf2f8; border-radius: 16px; display: flex; align-items: center; justify-content: center; margin-bottom: 24px;">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#ec4899" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg>
+          <!-- Product Design -->
+          <div class="pro-card" style="--card-accent: #ec4899;">
+            <div class="pro-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg>
             </div>
-            <h3 style="font-size: 24px; font-weight: 700; color: #0a192f; margin-bottom: 16px;">Product Design</h3>
-            <p style="color: #64748b; line-height: 1.6; margin-bottom: 20px;">Creating intuitive and beautiful user interfaces that enhance engagement and deliver premium user experiences.</p>
-            <ul style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px;">
-              <li style="display: flex; align-items: center; gap: 10px; font-size: 14px; color: #475569;"><span style="color: #ec4899;">✓</span> User Research</li>
-              <li style="display: flex; align-items: center; gap: 10px; font-size: 14px; color: #475569;"><span style="color: #ec4899;">✓</span> Interactive Prototypes</li>
-              <li style="display: flex; align-items: center; gap: 10px; font-size: 14px; color: #475569;"><span style="color: #ec4899;">✓</span> Design Systems</li>
+            <h3 style="font-size: 24px; font-weight: 700; color: #0f172a; margin-bottom: 16px; letter-spacing: -0.01em;">Product Design</h3>
+            <p style="color: #64748b; line-height: 1.6; margin-bottom: 32px; font-size: 15px;">Creating intuitive and beautiful user interfaces that enhance engagement and deliver premium user experiences.</p>
+            <ul class="pro-list">
+              <li class="pro-list-item"><svg class="pro-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> User Research</li>
+              <li class="pro-list-item"><svg class="pro-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Interactive Prototypes</li>
+              <li class="pro-list-item"><svg class="pro-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Design Systems</li>
+            </ul>
+          </div>
+
+          <!-- Automations -->
+          <div class="pro-card" style="--card-accent: #10b981;">
+            <div class="pro-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"></polyline><polyline points="1 20 1 14 7 14"></polyline><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path></svg>
+            </div>
+            <h3 style="font-size: 24px; font-weight: 700; color: #0f172a; margin-bottom: 16px; letter-spacing: -0.01em;">Automations</h3>
+            <p style="color: #64748b; line-height: 1.6; margin-bottom: 32px; font-size: 15px;">Streamlining business operations with intelligent RPA and custom workflow scripts to eliminate manual errors and save time.</p>
+            <ul class="pro-list">
+              <li class="pro-list-item"><svg class="pro-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> RPA Solutions</li>
+              <li class="pro-list-item"><svg class="pro-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Workflow Optimization</li>
+              <li class="pro-list-item"><svg class="pro-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Legacy System Automation</li>
+            </ul>
+          </div>
+
+          <!-- Digital Transformation -->
+          <div class="pro-card" style="--card-accent: #6366f1;">
+            <div class="pro-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+            </div>
+            <h3 style="font-size: 24px; font-weight: 700; color: #0f172a; margin-bottom: 16px; letter-spacing: -0.01em;">Digital Transformation</h3>
+            <p style="color: #64748b; line-height: 1.6; margin-bottom: 32px; font-size: 15px;">Guiding businesses through their digital evolution by modernizing legacy systems and integrating state-of-the-art tech.</p>
+            <ul class="pro-list">
+              <li class="pro-list-item"><svg class="pro-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Legacy Modernization</li>
+              <li class="pro-list-item"><svg class="pro-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Strategic Consulting</li>
+              <li class="pro-list-item"><svg class="pro-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Tech Integration</li>
+            </ul>
+          </div>
+
+          <!-- Custom Software Development -->
+          <div class="pro-card" style="--card-accent: #f43f5e;">
+            <div class="pro-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+            </div>
+            <h3 style="font-size: 24px; font-weight: 700; color: #0f172a; margin-bottom: 16px; letter-spacing: -0.01em;">Custom Software Development</h3>
+            <p style="color: #64748b; line-height: 1.6; margin-bottom: 32px; font-size: 15px;">Tailor-made software built from the ground up to address your unique business challenges, ensuring scalability and success.</p>
+            <ul class="pro-list">
+              <li class="pro-list-item"><svg class="pro-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Enterprise ERPs</li>
+              <li class="pro-list-item"><svg class="pro-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> CRM Solutions</li>
+              <li class="pro-list-item"><svg class="pro-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Industry Specific Apps</li>
             </ul>
           </div>
 
@@ -316,33 +417,325 @@
       </div>
     </section>
 
-    <!-- FEATURES SECTION -->
-
-    <section class="locations" id="locations">
-      <div class="locations-container">
-        <h3 class="section-title" data-fade="up">Why Choose SSP?</h3>
-        <div class="locations-grid">
-          <div class="location-card" data-fade="up">
-            <div class="location-image">
-              <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Real World Training" />
-              <div class="location-label">Hands-On Practice</div>
-            </div>
-            <div class="location-details">
-              <h4>Real-World Training</h4>
-              <p class="location-address">Modern curriculum with dedicated hands-on labs and real-time projects.</p>
-              <a href="#" class="location-phone">Learn More</a>
+    <!-- DETAILED TRAINING & PLACEMENTS SECTION -->
+    <section class="software-solutions-detail" id="training-placements" style="padding: clamp(80px, 8vw, 140px) 0; background: #f8fafc; position: relative; z-index: 2;">
+      <div class="container" style="max-width: 1400px; margin: 0 auto; padding: 0 clamp(16px, 3vw, 58px);">
+        
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: clamp(40px, 5vw, 100px); align-items: center; margin-bottom: clamp(60px, 6vw, 120px);">
+          <div data-fade="right">
+            <div style="background-color: #e0e7ff; color: #4f46e5; font-family: var(--font-inter); font-size: 13px; font-weight: 700; padding: 6px 16px; border-radius: 20px; margin-bottom: 24px; letter-spacing: 0.05em; display: inline-block;">CAREER EXCELLENCE</div>
+            <h2 style="font-family: var(--font-inter); font-size: clamp(32px, 4vw, 56px); font-weight: 800; color: #0a192f; margin-bottom: 24px; line-height: 1.1;">Empowering Careers with <br><span style="color: #4f46e5;">World-Class Training</span></h2>
+            <p style="font-family: var(--font-inter); font-size: 18px; color: #4a5568; line-height: 1.6; margin-bottom: 32px;">We provide comprehensive training programs and guaranteed placement support to transform students into industry-ready professionals. From <strong>hands-on coding</strong> to mock interviews, we guide you every step of the way.</p>
+            
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px;">
+              <div style="display: flex; flex-direction: column; gap: 8px;">
+                <h4 style="font-size: 16px; font-weight: 700; color: #0a192f;">Practical Learning</h4>
+                <p style="font-size: 14px; color: #64748b;">Real-world projects and interactive labs to build experience.</p>
+              </div>
+              <div style="display: flex; flex-direction: column; gap: 8px;">
+                <h4 style="font-size: 16px; font-weight: 700; color: #0a192f;">Placement Assistance</h4>
+                <p style="font-size: 14px; color: #64748b;">Dedicated support and corporate tie-ups to land your dream job.</p>
+              </div>
             </div>
           </div>
-          <div class="location-card" data-fade="up">
-            <div class="location-image">
-              <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Career Support" />
-              <div class="location-label">Placement Support</div>
+          <div style="position: relative;" data-fade="left">
+            <div style="aspect-ratio: 4/5; border-radius: 32px; overflow: hidden; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.15);">
+              <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Training and Placements" style="width: 100%; height: 100%; object-fit: cover;" />
             </div>
-            <div class="location-details">
-              <h4>Career Guidance</h4>
-              <p class="location-address">Resume building, mock interviews, and end-to-end placement assistance.</p>
-              <a href="#" class="location-phone">Learn More</a>
+            <!-- Floating Stat Card -->
+            <div style="position: absolute; bottom: 40px; left: -40px; background: white; padding: 24px; border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); display: flex; flex-direction: column; gap: 4px; border: 1px solid #f1f5f9;">
+              <span style="font-size: 32px; font-weight: 800; color: #4f46e5;">100%</span>
+              <span style="font-size: 14px; font-weight: 600; color: #64748b;">Placement Support</span>
             </div>
+          </div>
+        </div>
+
+        <!-- Service Grid -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 32px;">
+          
+          <!-- Trainings -->
+          <div class="pro-card" style="--card-accent: #3b82f6;">
+            <div class="pro-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+            </div>
+            <h3 style="font-size: 24px; font-weight: 700; color: #0a192f; margin-bottom: 16px;">Trainings</h3>
+            <p style="color: #64748b; line-height: 1.6; margin-bottom: 0;">Comprehensive, hands-on training programs designed to bridge the gap between academic learning and industry requirements.</p>
+          </div>
+
+          <!-- Crash Courses -->
+          <div class="pro-card" style="--card-accent: #8b5cf6;">
+            <div class="pro-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+            </div>
+            <h3 style="font-size: 24px; font-weight: 700; color: #0a192f; margin-bottom: 16px;">Crash Courses</h3>
+            <p style="color: #64748b; line-height: 1.6; margin-bottom: 0;">Short-term, intensive learning modules focused on rapidly mastering specific technologies and tools.</p>
+          </div>
+
+          <!-- ADAS2 -->
+          <div class="pro-card" style="--card-accent: #f59e0b;">
+            <div class="pro-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect><rect x="9" y="9" width="6" height="6"></rect><line x1="9" y1="1" x2="9" y2="4"></line><line x1="15" y1="1" x2="15" y2="4"></line><line x1="9" y1="20" x2="9" y2="23"></line><line x1="15" y1="20" x2="15" y2="23"></line><line x1="20" y1="9" x2="23" y2="9"></line><line x1="20" y1="14" x2="23" y2="14"></line><line x1="1" y1="9" x2="4" y2="9"></line><line x1="1" y1="14" x2="4" y2="14"></line></svg>
+            </div>
+            <h3 style="font-size: 24px; font-weight: 700; color: #0a192f; margin-bottom: 16px;">ADAS2</h3>
+            <p style="color: #64748b; line-height: 1.6; margin-bottom: 0;">Specialized training in cutting-edge automation, electronic control systems, and advanced technologies.</p>
+          </div>
+          
+          <!-- Workshops -->
+          <div class="pro-card" style="--card-accent: #06b6d4;">
+            <div class="pro-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+            </div>
+            <h3 style="font-size: 24px; font-weight: 700; color: #0a192f; margin-bottom: 16px;">Workshops</h3>
+            <p style="color: #64748b; line-height: 1.6; margin-bottom: 0;">Interactive, practical sessions led by industry experts covering the latest tech trends and hands-on skills.</p>
+          </div>
+          
+          <!-- Placements -->
+          <div class="pro-card" style="--card-accent: #10b981;">
+            <div class="pro-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+            </div>
+            <h3 style="font-size: 24px; font-weight: 700; color: #0a192f; margin-bottom: 16px;">Placements</h3>
+            <p style="color: #64748b; line-height: 1.6; margin-bottom: 0;">Dedicated career support, corporate tie-ups, and comprehensive interview preparation to secure your dream job.</p>
+          </div>
+          
+          <!-- Internship -->
+          <div class="pro-card" style="--card-accent: #ec4899;">
+            <div class="pro-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
+            </div>
+            <h3 style="font-size: 24px; font-weight: 700; color: #0a192f; margin-bottom: 16px;">Internship</h3>
+            <p style="color: #64748b; line-height: 1.6; margin-bottom: 0;">Real-world industry exposure through structured internship programs working on live production projects.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY CHOOSE SSP SECTION -->
+    <section class="why-choose-ssp" id="why-choose-ssp" style="padding: clamp(80px, 8vw, 140px) 0; background: #ffffff; position: relative; z-index: 2;">
+      <style>
+        .premium-card {
+          background: #ffffff;
+          border-radius: 16px;
+          padding: 40px;
+          box-shadow: 0 4px 6px -1px rgba(0,0,0,0.03), 0 2px 4px -1px rgba(0,0,0,0.02);
+          border: 1px solid #f1f5f9;
+          transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+          position: relative;
+          overflow: hidden;
+          z-index: 1;
+        }
+        .premium-card::after {
+          content: '';
+          position: absolute;
+          inset: 0;
+          border-radius: 16px;
+          padding: 1px;
+          background: linear-gradient(135deg, rgba(30,64,175,0.4), transparent, transparent);
+          -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+          -webkit-mask-composite: xor;
+          mask-composite: exclude;
+          opacity: 0;
+          transition: opacity 0.5s ease;
+          pointer-events: none;
+        }
+        .premium-card:hover {
+          transform: translateY(-4px);
+          box-shadow: 0 20px 40px -10px rgba(0,0,0,0.08), 0 0 40px -10px rgba(30,64,175,0.1);
+          border-color: transparent;
+        }
+        .premium-card:hover::after {
+          opacity: 1;
+        }
+        .premium-icon-box {
+          width: 48px;
+          height: 48px;
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+          margin-bottom: 24px;
+          color: #64748b;
+          transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .premium-card:hover .premium-icon-box {
+          color: #1e40af;
+          filter: drop-shadow(0 0 12px rgba(30, 64, 175, 0.4));
+          transform: translateY(-2px) scale(1.05);
+        }
+        .premium-title {
+          font-family: var(--font-inter);
+          font-weight: 800;
+          font-size: clamp(36px, 4.5vw, 56px);
+          color: #0f172a;
+          text-align: center;
+          margin-bottom: clamp(40px, 5vw, 80px);
+          letter-spacing: -0.02em;
+        }
+        .premium-subtitle {
+          font-family: var(--font-inter);
+          font-weight: 700;
+          font-size: 24px;
+          color: #0f172a;
+          margin-bottom: 40px;
+          display: flex;
+          align-items: center;
+          gap: 16px;
+          letter-spacing: -0.01em;
+        }
+        .premium-subtitle::after {
+          content: '';
+          flex: 1;
+          height: 1px;
+          background: #f1f5f9;
+        }
+        .premium-card-title {
+          font-size: 18px;
+          font-weight: 700;
+          color: #0f172a;
+          margin-bottom: 12px;
+          letter-spacing: -0.01em;
+        }
+        .premium-card-desc {
+          color: #64748b;
+          font-size: 15px;
+          line-height: 1.6;
+        }
+      </style>
+      
+      <div class="container" style="max-width: 1400px; margin: 0 auto; padding: 0 clamp(16px, 3vw, 58px);">
+        <h2 class="premium-title" data-fade="up">Why Choose <span style="color: #1e40af;">SSP?</span></h2>
+
+        <!-- SECTION 1: Software Solutions -->
+        <div style="margin-bottom: 80px;" data-fade="up">
+          <h3 class="premium-subtitle">SSP SS (Software Solutions)</h3>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px;">
+            
+            <div class="premium-card">
+              <div class="premium-icon-box">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+              </div>
+              <h4 class="premium-card-title">Client Focused</h4>
+              <p class="premium-card-desc">We prioritize client success through personalized software solutions and long-term partnerships.</p>
+            </div>
+
+            <div class="premium-card">
+              <div class="premium-icon-box">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><polyline points="9 12 11 14 15 10"></polyline></svg>
+              </div>
+              <h4 class="premium-card-title">Quality Assurance</h4>
+              <p class="premium-card-desc">Delivering reliable, secure, and high-performance solutions with strict quality standards.</p>
+            </div>
+
+            <div class="premium-card">
+              <div class="premium-icon-box">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+              </div>
+              <h4 class="premium-card-title">Transparency</h4>
+              <p class="premium-card-desc">Clear communication, honest processes, and complete project visibility at every stage.</p>
+            </div>
+
+            <div class="premium-card">
+              <div class="premium-icon-box">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="16" y="16" width="6" height="6" rx="1"></rect><rect x="2" y="16" width="6" height="6" rx="1"></rect><rect x="9" y="2" width="6" height="6" rx="1"></rect><path d="M5 16v-3a4 4 0 0 1 4-4h6a4 4 0 0 1 4 4v3"></path><path d="M12 12V8"></path></svg>
+              </div>
+              <h4 class="premium-card-title">Multiple Best Solutions</h4>
+              <p class="premium-card-desc">We provide innovative and scalable technology solutions tailored to different business needs.</p>
+            </div>
+
+            <div class="premium-card">
+              <div class="premium-icon-box">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+              </div>
+              <h4 class="premium-card-title">Trust with Clients</h4>
+              <p class="premium-card-desc">Building long-lasting relationships through commitment, integrity, and consistent delivery.</p>
+            </div>
+
+            <div class="premium-card">
+              <div class="premium-icon-box">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
+              </div>
+              <h4 class="premium-card-title">Experienced Team</h4>
+              <p class="premium-card-desc">Skilled professionals with expertise across modern technologies and real-world projects.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- SECTION 2: STI Training -->
+        <div data-fade="up">
+          <h3 class="premium-subtitle">SSP STI (Software Training Institute)</h3>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px;">
+            
+            <div class="premium-card">
+              <div class="premium-icon-box">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+              </div>
+              <h4 class="premium-card-title">Individual Mentorship</h4>
+              <p class="premium-card-desc">Personalized guidance and one-on-one support for every student.</p>
+            </div>
+
+            <div class="premium-card">
+              <div class="premium-icon-box">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+              </div>
+              <h4 class="premium-card-title">Limited Batch Size</h4>
+              <p class="premium-card-desc">Small focused batches for better interaction and effective learning.</p>
+            </div>
+
+            <div class="premium-card">
+              <div class="premium-icon-box">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+              </div>
+              <h4 class="premium-card-title">Multi Domain Skill Learning</h4>
+              <p class="premium-card-desc">Learn multiple industry-ready technologies under one platform.</p>
+            </div>
+
+            <div class="premium-card">
+              <div class="premium-icon-box">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon></svg>
+              </div>
+              <h4 class="premium-card-title">Career-Focused Modern Curriculum</h4>
+              <p class="premium-card-desc">Updated syllabus designed according to current IT industry requirements.</p>
+            </div>
+
+            <div class="premium-card">
+              <div class="premium-icon-box">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+              </div>
+              <h4 class="premium-card-title">Dedicated Practice</h4>
+              <p class="premium-card-desc">Continuous hands-on sessions, assignments, and real-time project exposure.</p>
+            </div>
+
+            <div class="premium-card">
+              <div class="premium-icon-box">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+              </div>
+              <h4 class="premium-card-title">Placement Assistance</h4>
+              <p class="premium-card-desc">Resume building, interview preparation, and placement support for students.</p>
+            </div>
+
+            <div class="premium-card">
+              <div class="premium-icon-box">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg>
+              </div>
+              <h4 class="premium-card-title">Standalone Mindset</h4>
+              <p class="premium-card-desc">Training students to think independently and solve real-world challenges confidently.</p>
+            </div>
+
+            <div class="premium-card">
+              <div class="premium-icon-box">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+              </div>
+              <h4 class="premium-card-title">Ethical Education</h4>
+              <p class="premium-card-desc">Combining technical excellence with discipline, values, and professional ethics.</p>
+            </div>
+
+            <div class="premium-card">
+              <div class="premium-icon-box">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="4"></circle><line x1="4.93" y1="4.93" x2="9.17" y2="9.17"></line><line x1="14.83" y1="14.83" x2="19.07" y2="19.07"></line><line x1="14.83" y1="9.17" x2="19.07" y2="4.93"></line><line x1="4.93" y1="19.07" x2="9.17" y2="14.83"></line></svg>
+              </div>
+              <h4 class="premium-card-title">Lifetime Support</h4>
+              <p class="premium-card-desc">Continued mentorship and career guidance even after course completion.</p>
+            </div>
+
           </div>
         </div>
       </div>
@@ -351,10 +744,10 @@
     <!-- MANAGEMENT SECTION -->
     <section class="management" id="management">
       <div class="management-container">
-        <h2 class="section-title" data-fade="up">Student Success</h2>
+        <h2 class="section-title" data-fade="up">Client Success and Student Success</h2>
         <div class="management-content">
           <div class="management-image" data-fade="up">
-            <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Students Learning" />
+            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Client and Student Success" />
           </div>
           <div class="management-accordion">
             <div class="accordion-item active" data-fade="up">
@@ -365,31 +758,67 @@
               </div>
               <div class="accordion-body">
                 <div class="accordion-body-inner">
-                  <p>Personalized progress monitoring and mentor feedback to ensure you stay on track and continuously improve.</p>
+                  <p>Personalized progress monitoring and mentor feedback to ensure students stay on track and continuously improve.</p>
                 </div>
               </div>
             </div>
             <div class="accordion-item" data-fade="up">
               <div class="accordion-header">
                 <span class="accordion-num">02</span>
-                <h4 class="accordion-title">Standalone Mindset</h4>
+                <h4 class="accordion-title">Business Transformation</h4>
                 <span class="accordion-toggle">+</span>
               </div>
               <div class="accordion-body">
                 <div class="accordion-body-inner">
-                  <p>We build independent problem-solving skills that allow you to tackle complex challenges and thrive in a professional environment.</p>
+                  <p>Driving digital evolution for our clients through custom-built software that streamlines operations and fosters measurable growth.</p>
                 </div>
               </div>
             </div>
             <div class="accordion-item" data-fade="up">
               <div class="accordion-header">
                 <span class="accordion-num">03</span>
+                <h4 class="accordion-title">Standalone Mindset</h4>
+                <span class="accordion-toggle">+</span>
+              </div>
+              <div class="accordion-body">
+                <div class="accordion-body-inner">
+                  <p>We build independent problem-solving skills that allow students to tackle complex challenges and thrive in any professional environment.</p>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item" data-fade="up">
+              <div class="accordion-header">
+                <span class="accordion-num">04</span>
+                <h4 class="accordion-title">Scalable Solutions</h4>
+                <span class="accordion-toggle">+</span>
+              </div>
+              <div class="accordion-body">
+                <div class="accordion-body-inner">
+                  <p>Engineering robust platforms for businesses designed to grow and handle increasing complexity with ease.</p>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item" data-fade="up">
+              <div class="accordion-header">
+                <span class="accordion-num">05</span>
                 <h4 class="accordion-title">Lifetime Support</h4>
                 <span class="accordion-toggle">+</span>
               </div>
               <div class="accordion-body">
                 <div class="accordion-body-inner">
-                  <p>Continuous guidance whenever you need it. Our relationship doesn't end with a job placement; we're here for your entire career journey.</p>
+                  <p>Continuous guidance for both students and clients. Our relationship is a long-term commitment to your ongoing success journey.</p>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item" data-fade="up">
+              <div class="accordion-header">
+                <span class="accordion-num">06</span>
+                <h4 class="accordion-title">Strategic Partnership</h4>
+                <span class="accordion-toggle">+</span>
+              </div>
+              <div class="accordion-body">
+                <div class="accordion-body-inner">
+                  <p>We align with your vision, providing technical expertise and strategic value to ensure your business stays ahead of the curve.</p>
                 </div>
               </div>
             </div>
@@ -398,20 +827,20 @@
       </div>
     </section>
 
-    <!-- CONTACT SECTION -->
-    <section class="contact" id="contact">
-      <div class="contact-container">
-        <h2 class="section-title" data-fade="up">Talk to a Mentor</h2>
-        <p class="contact-subtitle" data-fade="up">No pressure. Just clarity. Leave your contacts and we will reach out to you.</p>
-        <form class="contact-form" id="contact-form" data-fade="up">
-          <div class="form-group">
-            <input type="text" id="form-name" placeholder="Your Name" required />
+    <!-- CONNECT SECTION -->
+    <section class="contact" id="contact" style="padding: clamp(100px, 10vw, 160px) 0; background: #ffffff; position: relative; z-index: 2;">
+      <div class="contact-container" style="max-width: 800px; margin: 0 auto; text-align: center; padding: 0 24px;">
+        <div style="background: #f8fafc; padding: clamp(40px, 6vw, 80px); border-radius: 32px; border: 1px solid #f1f5f9; box-shadow: 0 20px 40px -10px rgba(0,0,0,0.05);" data-fade="up">
+          <div style="width: 80px; height: 80px; background: #25D366; border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 32px; box-shadow: 0 10px 20px rgba(37, 211, 102, 0.2);">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
           </div>
-          <div class="form-group">
-            <input type="tel" id="form-phone" placeholder="Phone Number" required />
-          </div>
-          <button type="submit" class="btn btn-orange">Enquire Now</button>
-        </form>
+          <h2 style="font-size: clamp(32px, 4vw, 48px); font-weight: 800; color: #0f172a; margin-bottom: 20px; letter-spacing: -0.02em;">Connect with Us</h2>
+          <p style="color: #64748b; font-size: 18px; line-height: 1.6; margin-bottom: 40px; max-width: 500px; margin-left: auto; margin-right: auto;">Have questions about our trainings or services? Get in touch with our team directly on WhatsApp for instant support.</p>
+          <a href="https://wa.me/919035011859?text=I%20want%20to%20know%20more%20about%20your%20services" target="_blank" class="btn" style="background: #25D366; color: white; padding: 18px 48px; border-radius: 100px; font-weight: 700; font-size: 18px; display: inline-flex; align-items: center; gap: 12px; transition: all 0.3s ease; box-shadow: 0 10px 20px rgba(37, 211, 102, 0.2);" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 15px 30px rgba(37, 211, 102, 0.3)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 20px rgba(37, 211, 102, 0.2)'">
+            Message on WhatsApp
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </a>
+        </div>
       </div>
     </section>
   </main>
