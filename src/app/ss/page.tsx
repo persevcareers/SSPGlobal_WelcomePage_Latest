@@ -26,21 +26,7 @@ export default function SSPage() {
   const [homeUrl, setHomeUrl] = useState('/')
   const [stiUrl, setStiUrl] = useState('https://sti.ssptechedu.com')
 
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const hostname = window.location.hostname
-      if (hostname.startsWith('sti.') || hostname.startsWith('ss.')) {
-        const parts = hostname.split('.')
-        const parentDomain = parts.slice(1).join('.')
-        const port = window.location.port ? `:${window.location.port}` : ''
-        setHomeUrl(`${window.location.protocol}//${parentDomain}${port}`)
-        setStiUrl(`${window.location.protocol}//sti.${parentDomain}${port}`)
-      } else if (hostname.includes('localhost') || hostname.includes('127.0.0.1') || hostname.includes('192.168.')) {
-        setHomeUrl('/')
-        setStiUrl('/sti')
-      }
-    }
-  }, [])
+
 
   const router = useRouter()
 

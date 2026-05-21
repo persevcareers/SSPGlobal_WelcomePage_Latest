@@ -19,15 +19,7 @@ export default function HomePage() {
   const [trainingUrl, setTrainingUrl] = useState('https://sti.ssptechedu.com/')
   const [ssUrl, setSsUrl] = useState('https://ss.ssptechedu.com/')
 
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const hostname = window.location.hostname
-      if (hostname.includes('localhost') || hostname.includes('127.0.0.1') || hostname.includes('192.168.')) {
-        setTrainingUrl('/sti')
-        setSsUrl('/ss')
-      }
-    }
-  }, [])
+
 
   const router = useRouter()
 
