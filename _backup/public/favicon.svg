@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- Background: rounded square matching SSP brand blue -->
+  <rect width="64" height="64" rx="12" ry="12" fill="#1a56db"/>
+  <!-- Subtle inner gradient overlay -->
+  <rect width="64" height="64" rx="12" ry="12" fill="url(#grad)" opacity="0.4"/>
+  <!-- SSP text - bold, white, centered -->
+  <text
+    x="32"
+    y="42"
+    font-family="Arial Black, Arial, sans-serif"
+    font-weight="900"
+    font-size="26"
+    fill="#ffffff"
+    text-anchor="middle"
+    letter-spacing="1"
+  >SSP</text>
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0a192f;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+</svg>

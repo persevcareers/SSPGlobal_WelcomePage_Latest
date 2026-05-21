@@ -1,49 +1,34 @@
-# SSP Global – Software Organization in Tirupati
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-**SSP Global** is Tirupati's leading Software Organization providing:
+## Getting Started
 
-- 🎓 **Software Training** – Hands-on, real-time training in Full Stack, AI, DevOps, Cloud & more
-- 💼 **Placements** – 100% placement support with corporate tie-ups and interview prep
-- 💻 **Software Solutions** – Custom development, AI/ML, automation & digital transformation
-- ⚙️ **AI & DevOps Services** – CI/CD pipelines, cloud setup, intelligent automation
-
-## Brand Identity
-
-| Field | Value |
-|-------|-------|
-| Brand Name | SSP Global |
-| Full Name | SSP Global – Software Organization in Tirupati |
-| Location | Annamaiah Circle, Beside DMART, AIR Bypass Road, Tirupati, AP |
-| Phone | +91-9035011859 |
-| Email | persevcareers@gmail.com |
-| Website | https://www.ssptechedu.com |
-
-## Divisions
-
-- **SSP STI** – [Software Training Institute](https://sti.ssptechedu.com)
-- **SSP SS** – [Software Solutions](https://ss.ssptechedu.com)
-
-## SEO Keywords
-
-SSP Global, Software Organization in Tirupati, Software Training Tirupati, Placements Tirupati, AI Training Tirupati, DevOps Training Tirupati, Cloud Training Tirupati, Software Institute Tirupati, IT Training Andhra Pradesh
-
-## Tech Stack
-
-- Vite + TypeScript
-- GSAP (animations)
-- Lenis (smooth scroll)
-- Swiper (slider)
-
-## Development
+First, run the development server:
 
 ```bash
-npm install
 npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
 ```
 
-## Google Search Goal
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-When users search Google, the brand should appear as:
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-> **SSP Global – Software Organization in Tirupati**  
-> Providing: Trainings | Placements | Software Solutions
+## Learn More
+
+To learn more about Next.js, take a look at the following resources:
+
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+
+## Deploy on Vercel
+
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.

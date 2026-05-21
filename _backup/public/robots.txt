@@ -1,0 +1,14 @@
+# SSP Global – Software Organization in Tirupati
+# https://www.ssptechedu.com/
+
+User-agent: *
+Allow: /
+
+# Block common non-content paths
+Disallow: /node_modules/
+Disallow: /src/
+Disallow: /.git/
+Disallow: /testsprite_tests/
+
+# Sitemap
+Sitemap: https://www.ssptechedu.com/sitemap.xml
