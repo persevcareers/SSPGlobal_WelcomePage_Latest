@@ -1,6 +1,8 @@
 'use client'
 
 import React, { useEffect, useState, useRef } from 'react'
+import Link from 'next/link'
+import { useRouter } from 'next/navigation'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import Lenis from 'lenis'
@@ -25,6 +27,47 @@ export default function HomePage() {
         setSsUrl('/ss')
       }
     }
+  }, [])
+
+  const router = useRouter()
+
+  const handleSmoothNavigation = (targetUrl: string, e?: React.MouseEvent) => {
+    if (e) {
+      e.preventDefault()
+    }
+    setMenuOpen(false)
+    const wrapper = document.getElementById('smooth-page-wrapper')
+    if (wrapper) {
+      wrapper.classList.remove('fade-in')
+      setTimeout(() => {
+        if (targetUrl.startsWith('http://') || targetUrl.startsWith('https://')) {
+          window.location.href = targetUrl
+        } else {
+          router.push(targetUrl)
+        }
+      }, 400)
+    } else {
+      if (targetUrl.startsWith('http://') || targetUrl.startsWith('https://')) {
+        window.location.href = targetUrl
+      } else {
+        router.push(targetUrl)
+      }
+    }
+  }
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+    ScrollTrigger.clearScrollMemory()
+    ScrollTrigger.refresh()
+
+    const timer = setTimeout(() => {
+      const wrapper = document.getElementById('smooth-page-wrapper')
+      if (wrapper) {
+        wrapper.classList.add('fade-in')
+      }
+    }, 50)
+
+    return () => clearTimeout(timer)
   }, [])
 
   // 1. Lenis Smooth Scroll Setup
@@ -228,7 +271,7 @@ export default function HomePage() {
   }, [])
 
   return (
-    <>
+    <div id="smooth-page-wrapper" className="page-transition">
       {/* HEADER */}
       <header className={`header ${headerHidden ? 'hidden' : ''}`} id="header">
         <div className="header-inner">
@@ -250,17 +293,17 @@ export default function HomePage() {
                 </a>
               </li>
               <li>
-                <a href={trainingUrl} onClick={() => setMenuOpen(false)}>
+                <a href={trainingUrl} onClick={(e) => handleSmoothNavigation(trainingUrl, e)}>
                   Training
                 </a>
               </li>
               <li>
-                <a href={trainingUrl} onClick={() => setMenuOpen(false)}>
+                <a href={trainingUrl} onClick={(e) => handleSmoothNavigation(trainingUrl, e)}>
                   Placements
                 </a>
               </li>
               <li>
-                <a href={ssUrl} onClick={() => setMenuOpen(false)}>
+                <a href={ssUrl} onClick={(e) => handleSmoothNavigation(ssUrl, e)}>
                   Software Solutions
                 </a>
               </li>
@@ -350,7 +393,8 @@ export default function HomePage() {
 
             <div className="s-split-cards" id="s-split-cards">
               <a
-                href="https://sti.ssptechedu.com/"
+                href={trainingUrl}
+                onClick={(e) => handleSmoothNavigation(trainingUrl, e)}
                 className="s-card s-card-left"
                 id="s-card-sti"
                 style={{ ['--theme-color' as any]: '15 89% 50%' }}
@@ -388,7 +432,8 @@ export default function HomePage() {
               </a>
 
               <a
-                href="https://ss.ssptechedu.com/"
+                href={ssUrl}
+                onClick={(e) => handleSmoothNavigation(ssUrl, e)}
                 className="s-card s-card-right"
                 id="s-card-ssp"
                 style={{ ['--theme-color' as any]: '210 100% 50%' }}
@@ -1986,13 +2031,13 @@ export default function HomePage() {
             <h5 className="footer-heading">Divisions</h5>
             <ul>
               <li>
-                <a href={trainingUrl}>Training</a>
+                <a href={trainingUrl} onClick={(e) => handleSmoothNavigation(trainingUrl, e)}>Training</a>
               </li>
               <li>
-                <a href={trainingUrl}>Placements</a>
+                <a href={trainingUrl} onClick={(e) => handleSmoothNavigation(trainingUrl, e)}>Placements</a>
               </li>
               <li>
-                <a href={ssUrl}>Software Solutions</a>
+                <a href={ssUrl} onClick={(e) => handleSmoothNavigation(ssUrl, e)}>Software Solutions</a>
               </li>
               <li>
                 <a href="#leadership">Leadership</a>
@@ -2059,6 +2104,6 @@ export default function HomePage() {
         </div>
       </footer>
 
-    </>
+    </div>
   )
 }

@@ -1,6 +1,7 @@
 'use client'
 
 import React, { useState, useEffect } from 'react'
+import { useRouter } from 'next/navigation'
 
 interface ServiceDetail {
   title: string
@@ -39,6 +40,42 @@ export default function SSPage() {
         setStiUrl('/sti')
       }
     }
+  }, [])
+
+  const router = useRouter()
+
+  const handleSmoothNavigation = (targetUrl: string, e?: React.MouseEvent) => {
+    if (e) {
+      e.preventDefault()
+    }
+    const wrapper = document.getElementById('smooth-page-wrapper')
+    if (wrapper) {
+      wrapper.classList.remove('fade-in')
+      setTimeout(() => {
+        if (targetUrl.startsWith('http://') || targetUrl.startsWith('https://')) {
+          window.location.href = targetUrl
+        } else {
+          router.push(targetUrl)
+        }
+      }, 400)
+    } else {
+      if (targetUrl.startsWith('http://') || targetUrl.startsWith('https://')) {
+        window.location.href = targetUrl
+      } else {
+        router.push(targetUrl)
+      }
+    }
+  }
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+    const timer = setTimeout(() => {
+      const wrapper = document.getElementById('smooth-page-wrapper')
+      if (wrapper) {
+        wrapper.classList.add('fade-in')
+      }
+    }, 50)
+    return () => clearTimeout(timer)
   }, [])
 
   const services: ServiceDetail[] = [
@@ -141,7 +178,7 @@ export default function SSPage() {
   }
 
   return (
-    <div style={{ backgroundColor: '#0b1329', color: '#f8fafc', minHeight: '100vh', fontFamily: 'var(--font-inter)' }}>
+    <div id="smooth-page-wrapper" className="page-transition" style={{ backgroundColor: '#0b1329', color: '#f8fafc', minHeight: '100vh', fontFamily: 'var(--font-inter)' }}>
       {/* HEADER */}
       <header style={{
         position: 'sticky',
@@ -160,7 +197,7 @@ export default function SSPage() {
           justifyContent: 'space-between',
           alignItems: 'center'
         }}>
-          <a href={homeUrl} style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+          <a href={homeUrl} onClick={(e) => handleSmoothNavigation(homeUrl, e)} style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
             <img src="/images/SSP.png" alt="SSP Logo" style={{ width: '44px', height: '44px', objectFit: 'contain', filter: 'brightness(1.2)' }} />
             <div style={{ display: 'flex', flexDirection: 'column' }}>
               <span style={{ fontWeight: 800, fontSize: '20px', color: 'white', letterSpacing: '0.05em' }}>SSP SOLUTIONS</span>
@@ -168,7 +205,7 @@ export default function SSPage() {
             </div>
           </a>
           <nav style={{ display: 'flex', gap: '24px', alignItems: 'center' }}>
-            <a href={homeUrl} style={{ fontSize: '14px', fontWeight: 600, color: '#94a3b8' }}>Home</a>
+            <a href={homeUrl} onClick={(e) => handleSmoothNavigation(homeUrl, e)} style={{ fontSize: '14px', fontWeight: 600, color: '#94a3b8' }}>Home</a>
             <a href="#vision" style={{ fontSize: '14px', fontWeight: 600, color: '#94a3b8' }}>Our Vision</a>
             <a href="#services" style={{ fontSize: '14px', fontWeight: 600, color: '#94a3b8' }}>Services</a>
             <a href="#industries" style={{ fontSize: '14px', fontWeight: 600, color: '#94a3b8' }}>Industries</a>
@@ -787,8 +824,8 @@ export default function SSPage() {
             <div>
               <h4 style={{ color: 'white', fontWeight: 700, fontSize: '15px', marginBottom: '16px' }}>Divisions</h4>
               <ul style={{ display: 'flex', flexDirection: 'column', gap: '10px', fontSize: '14px', padding: 0 }}>
-                <li><a href={homeUrl} style={{ color: '#64748b' }}>SSP Global Home</a></li>
-                <li><a href={stiUrl} style={{ color: '#64748b' }}>Software Training (STI)</a></li>
+                <li><a href={homeUrl} onClick={(e) => handleSmoothNavigation(homeUrl, e)} style={{ color: '#64748b' }}>SSP Global Home</a></li>
+                <li><a href={stiUrl} onClick={(e) => handleSmoothNavigation(stiUrl, e)} style={{ color: '#64748b' }}>Software Training (STI)</a></li>
                 <li><a href="#services" style={{ color: '#64748b' }}>Software Solutions (SS)</a></li>
               </ul>
             </div>

@@ -1,6 +1,8 @@
 'use client'
 
 import React, { useState, useEffect } from 'react'
+import Link from 'next/link'
+import { useRouter } from 'next/navigation'
 
 interface Course {
   id: string
@@ -50,6 +52,42 @@ export default function STIPage() {
         setSsUrl('/ss')
       }
     }
+  }, [])
+
+  const router = useRouter()
+
+  const handleSmoothNavigation = (targetUrl: string, e?: React.MouseEvent) => {
+    if (e) {
+      e.preventDefault()
+    }
+    const wrapper = document.getElementById('smooth-page-wrapper')
+    if (wrapper) {
+      wrapper.classList.remove('fade-in')
+      setTimeout(() => {
+        if (targetUrl.startsWith('http://') || targetUrl.startsWith('https://')) {
+          window.location.href = targetUrl
+        } else {
+          router.push(targetUrl)
+        }
+      }, 400)
+    } else {
+      if (targetUrl.startsWith('http://') || targetUrl.startsWith('https://')) {
+        window.location.href = targetUrl
+      } else {
+        router.push(targetUrl)
+      }
+    }
+  }
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+    const timer = setTimeout(() => {
+      const wrapper = document.getElementById('smooth-page-wrapper')
+      if (wrapper) {
+        wrapper.classList.add('fade-in')
+      }
+    }, 50)
+    return () => clearTimeout(timer)
   }, [])
 
   const courses: Record<string, Course> = {
@@ -236,7 +274,7 @@ export default function STIPage() {
   ]
 
   return (
-    <div style={{ backgroundColor: '#ffffff', minHeight: '100vh', fontFamily: 'var(--font-inter)', color: '#1e293b' }}>
+    <div id="smooth-page-wrapper" className="page-transition" style={{ backgroundColor: '#ffffff', minHeight: '100vh', fontFamily: 'var(--font-inter)', color: '#1e293b' }}>
       {/* HEADER */}
       <header style={{
         position: 'sticky',
@@ -255,7 +293,7 @@ export default function STIPage() {
           justifyContent: 'space-between',
           alignItems: 'center'
         }}>
-          <a href={homeUrl} style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+          <a href={homeUrl} onClick={(e) => handleSmoothNavigation(homeUrl, e)} style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
             <img src="/images/SSP.png" alt="SSP Logo" style={{ width: '44px', height: '44px', objectFit: 'contain' }} />
             <div style={{ display: 'flex', flexDirection: 'column' }}>
               <span style={{ fontWeight: 800, fontSize: '20px', color: '#0f172a', letterSpacing: '0.05em' }}>SSP STI</span>
@@ -263,7 +301,7 @@ export default function STIPage() {
             </div>
           </a>
           <nav style={{ display: 'flex', gap: '24px', alignItems: 'center' }}>
-            <a href={homeUrl} style={{ fontSize: '14px', fontWeight: 600, color: '#475569' }}>Home</a>
+            <a href={homeUrl} onClick={(e) => handleSmoothNavigation(homeUrl, e)} style={{ fontSize: '14px', fontWeight: 600, color: '#475569' }}>Home</a>
             <a href="#visionaries" style={{ fontSize: '14px', fontWeight: 600, color: '#475569' }}>Mentors</a>
             <a href="#why-choose" style={{ fontSize: '14px', fontWeight: 600, color: '#475569' }}>Why Choose Us</a>
             <a href="#courses" style={{ fontSize: '14px', fontWeight: 600, color: '#475569' }}>Courses</a>
@@ -929,9 +967,9 @@ export default function STIPage() {
             <div>
               <h4 style={{ color: 'white', fontWeight: 700, fontSize: '15px', marginBottom: '16px' }}>Divisions</h4>
               <ul style={{ display: 'flex', flexDirection: 'column', gap: '10px', fontSize: '14px', padding: 0 }}>
-                <li><a href={homeUrl} style={{ color: '#94a3b8' }}>SSP Global Home</a></li>
+                <li><a href={homeUrl} onClick={(e) => handleSmoothNavigation(homeUrl, e)} style={{ color: '#94a3b8' }}>SSP Global Home</a></li>
                 <li><a href="#courses" style={{ color: '#94a3b8' }}>Software Training (STI)</a></li>
-                <li><a href={ssUrl} style={{ color: '#94a3b8' }}>Software Solutions (SS)</a></li>
+                <li><a href={ssUrl} onClick={(e) => handleSmoothNavigation(ssUrl, e)} style={{ color: '#94a3b8' }}>Software Solutions (SS)</a></li>
               </ul>
             </div>
           </div>
