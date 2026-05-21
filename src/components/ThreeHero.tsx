@@ -157,6 +157,9 @@ export default function ThreeHero() {
               texture.magFilter = THREE.LinearFilter
               texture.generateMipmaps = false
 
+              // Correct the color space to prevent washed-out/bright colors
+              texture.colorSpace = THREE.SRGBColorSpace
+
               // Crucial: Upload texture to GPU memory immediately to prevent scroll stutter
               renderer.initTexture(texture)
 
