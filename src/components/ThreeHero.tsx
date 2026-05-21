@@ -44,7 +44,6 @@ export default function ThreeHero() {
     // 3. Image and Texture states
     const frameCount = 241
     const textures: (THREE.Texture | null)[] = new Array(frameCount).fill(null)
-    const textureLoader = new THREE.TextureLoader()
 
     const currentFramePath = (index: number) =>
       `/Frame/frame_${String(index).padStart(3, '0')}_delay-0.041s.png`
@@ -133,7 +132,7 @@ export default function ThreeHero() {
     }
     window.addEventListener('pageshow', handlePageshow)
 
-    // 6. Progressive Image & Texture Loading Schedule
+    // 6. Progressive Image & Texture Loading Schedule and Queue
     function getIndices(interval: number, offset: number) {
       const arr = []
       for (let i = offset; i < frameCount; i += interval) {
@@ -150,52 +149,129 @@ export default function ThreeHero() {
       { indices: getIndices(2, 1), delay: 3500 }    // full 60fps (120 frames)
     ]
 
+    const downloadQueue: { index: number; url: string }[] = []
+    const uploadQueue: { index: number; texture: THREE.Texture }[] = []
+    let activeDownloads = 0
+    const MAX_CONCURRENT_DOWNLOADS = 4
+    let uploadAnimationFrameId: number | null = null
     let loadedCount = 0
     const totalToLoad = frameCount
     const isMounted = { current: true }
     const timeoutIds: number[] = []
 
+    // Check browser support for ImageBitmap
+    const imageBitmapSupported = typeof window !== 'undefined' && 'createImageBitmap' in window
+    const imageBitmapLoader = imageBitmapSupported ? new THREE.ImageBitmapLoader() : null
+    if (imageBitmapLoader) {
+      imageBitmapLoader.setOptions({ imageOrientation: 'flipY' })
+    }
+    const fallbackLoader = new THREE.TextureLoader()
+
+    function loadTexture(
+      url: string,
+      onLoad: (texture: THREE.Texture) => void,
+      onError: (err: any) => void
+    ) {
+      if (imageBitmapLoader) {
+        imageBitmapLoader.load(
+          url,
+          (imageBitmap) => {
+            const texture = new THREE.Texture(imageBitmap)
+            texture.flipY = false // already flipped via loader options imageOrientation: 'flipY'
+            texture.needsUpdate = true
+            onLoad(texture)
+          },
+          undefined,
+          onError
+        )
+      } else {
+        fallbackLoader.load(url, onLoad, undefined, onError)
+      }
+    }
+
+    function processDownloadQueue() {
+      if (!isMounted.current) return
+      while (activeDownloads < MAX_CONCURRENT_DOWNLOADS && downloadQueue.length > 0) {
+        const task = downloadQueue.shift()
+        if (!task) break
+
+        activeDownloads++
+        loadTexture(
+          task.url,
+          (texture) => {
+            activeDownloads--
+            if (!isMounted.current) {
+              texture.dispose()
+              return
+            }
+
+            // Configure texture for sharp layout and optimal GPU caching
+            texture.minFilter = THREE.LinearFilter
+            texture.magFilter = THREE.LinearFilter
+            texture.generateMipmaps = false
+            texture.colorSpace = THREE.SRGBColorSpace
+
+            // Queue for staggered GPU upload
+            uploadQueue.push({ index: task.index, texture })
+            if (uploadAnimationFrameId === null) {
+              uploadAnimationFrameId = requestAnimationFrame(processUploadQueue)
+            }
+            processDownloadQueue()
+          },
+          (err) => {
+            console.error(`Error loading texture ${task.index}:`, err)
+            activeDownloads--
+            processDownloadQueue()
+          }
+        )
+      }
+    }
+
+    function processUploadQueue() {
+      if (!isMounted.current) return
+
+      // Upload max 1 texture per frame to ensure perfect smoothness
+      if (uploadQueue.length > 0) {
+        const item = uploadQueue.shift()
+        if (item) {
+          const { index, texture } = item
+          renderer.initTexture(texture)
+          textures[index] = texture
+          loadedCount++
+
+          // Progress percentage
+          const progress = Math.round((loadedCount / totalToLoad) * 100)
+          setLoadingProgress(progress)
+
+          // Update skeleton state
+          const skeletonIndices = steps[0].indices
+          if (skeletonIndices.every((idx) => textures[idx] !== null)) {
+            setSkeletonLoaded(true)
+          }
+
+          // Trigger render on first load or if scrolling on this exact frame
+          if (loadedCount === 1 || Math.round(seq.frame) === index) {
+            render()
+          }
+        }
+      }
+
+      if (uploadQueue.length > 0) {
+        uploadAnimationFrameId = requestAnimationFrame(processUploadQueue)
+      } else {
+        uploadAnimationFrameId = null
+      }
+    }
+
     steps.forEach((step, stepIdx) => {
       const id = window.setTimeout(() => {
         step.indices.forEach((index) => {
-          textureLoader.load(
-            currentFramePath(index),
-            (texture) => {
-              if (!isMounted.current) {
-                texture.dispose()
-                return
-              }
-              // Configure texture for sharp layout and optimal GPU caching
-              texture.minFilter = THREE.LinearFilter
-              texture.magFilter = THREE.LinearFilter
-              texture.generateMipmaps = false
-
-              // Correct the color space to prevent washed-out/bright colors
-              texture.colorSpace = THREE.SRGBColorSpace
-
-              // Crucial: Upload texture to GPU memory immediately to prevent scroll stutter
-              renderer.initTexture(texture)
-
-              textures[index] = texture
-              loadedCount++
-
-              // Progress percentage
-              const progress = Math.round((loadedCount / totalToLoad) * 100)
-              setLoadingProgress(progress)
-
-              if (stepIdx === 0 && step.indices.every(idx => textures[idx] !== null)) {
-                setSkeletonLoaded(true)
-              }
-
-              // Trigger render on first load or if scrolling on this exact frame
-              if (loadedCount === 1 || Math.round(seq.frame) === index) {
-                render()
-              }
-            },
-            undefined,
-            (err) => console.error(`Error loading texture ${index}:`, err)
-          )
+          downloadQueue.push({
+            index,
+            url: currentFramePath(index),
+          })
         })
+        processDownloadQueue()
       }, step.delay)
       timeoutIds.push(id)
     })
@@ -321,6 +397,9 @@ export default function ThreeHero() {
     return () => {
       window.removeEventListener('pageshow', handlePageshow)
       isMounted.current = false
+      if (uploadAnimationFrameId !== null) {
+        cancelAnimationFrame(uploadAnimationFrameId)
+      }
       timeoutIds.forEach((id) => window.clearTimeout(id))
       window.removeEventListener('resize', handleResize)
       heroScroll.kill()
