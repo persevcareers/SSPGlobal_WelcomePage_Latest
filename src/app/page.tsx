@@ -13,6 +13,19 @@ export default function HomePage() {
   const [activeAccordion, setActiveAccordion] = useState<number>(0)
   const [headerHidden, setHeaderHidden] = useState(false)
   const lenisRef = useRef<Lenis | null>(null)
+  
+  const [trainingUrl, setTrainingUrl] = useState('https://sti.ssptechedu.com/')
+  const [ssUrl, setSsUrl] = useState('https://ss.ssptechedu.com/')
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const hostname = window.location.hostname
+      if (hostname.includes('localhost') || hostname.includes('127.0.0.1') || hostname.includes('192.168.')) {
+        setTrainingUrl('/sti')
+        setSsUrl('/ss')
+      }
+    }
+  }, [])
 
   // 1. Lenis Smooth Scroll Setup
   useEffect(() => {
@@ -237,17 +250,17 @@ export default function HomePage() {
                 </a>
               </li>
               <li>
-                <a href="https://sti.ssptechedu.com/" onClick={() => setMenuOpen(false)}>
+                <a href={trainingUrl} onClick={() => setMenuOpen(false)}>
                   Training
                 </a>
               </li>
               <li>
-                <a href="https://sti.ssptechedu.com/" onClick={() => setMenuOpen(false)}>
+                <a href={trainingUrl} onClick={() => setMenuOpen(false)}>
                   Placements
                 </a>
               </li>
               <li>
-                <a href="https://ss.ssptechedu.com/" onClick={() => setMenuOpen(false)}>
+                <a href={ssUrl} onClick={() => setMenuOpen(false)}>
                   Software Solutions
                 </a>
               </li>
@@ -1973,13 +1986,13 @@ export default function HomePage() {
             <h5 className="footer-heading">Divisions</h5>
             <ul>
               <li>
-                <a href="https://sti.ssptechedu.com/">Training</a>
+                <a href={trainingUrl}>Training</a>
               </li>
               <li>
-                <a href="https://sti.ssptechedu.com/">Placements</a>
+                <a href={trainingUrl}>Placements</a>
               </li>
               <li>
-                <a href="https://ss.ssptechedu.com/">Software Solutions</a>
+                <a href={ssUrl}>Software Solutions</a>
               </li>
               <li>
                 <a href="#leadership">Leadership</a>

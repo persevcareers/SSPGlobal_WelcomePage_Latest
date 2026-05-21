@@ -13,32 +13,11 @@ export default function ThreeHero() {
   const [loadingProgress, setLoadingProgress] = useState(0)
   const [skeletonLoaded, setSkeletonLoaded] = useState(false)
 
-  // Detect bfcache restoration: when user navigates away (Training/Placements)
-  // and presses Back, the browser restores the frozen page but the WebGL
-  // context is dead. Force a full reload so everything re-initializes.
-  useEffect(() => {
-    const handlePageShow = (e: PageTransitionEvent) => {
-      if (e.persisted) {
-        window.location.reload()
-      }
-    }
-    window.addEventListener('pageshow', handlePageShow)
-    return () => window.removeEventListener('pageshow', handlePageShow)
-  }, [])
-
   useEffect(() => {
     if (!canvasRef.current || !containerRef.current) return
 
     const canvas = canvasRef.current
     const container = containerRef.current
-
-    // If the WebGL context is lost at runtime (e.g. GPU reclaimed it),
-    // force a full page reload to re-create the renderer.
-    const handleContextLost = (e: Event) => {
-      e.preventDefault()
-      window.location.reload()
-    }
-    canvas.addEventListener('webglcontextlost', handleContextLost)
 
     // 1. Setup Three.js Scene, Orthographic Camera, and Renderer
     const scene = new THREE.Scene()
@@ -142,10 +121,17 @@ export default function ThreeHero() {
     // Handle window resize
     const handleResize = () => {
       renderer.setSize(window.innerWidth, window.innerHeight)
-      lastDrawnFrame = -1
       render()
     }
     window.addEventListener('resize', handleResize)
+
+    // Handle bfcache restore to prevent WebGL black screens
+    const handlePageshow = (e: PageTransitionEvent) => {
+      if (e.persisted) {
+        window.location.reload()
+      }
+    }
+    window.addEventListener('pageshow', handlePageshow)
 
     // 6. Progressive Image & Texture Loading Schedule
     function getIndices(interval: number, offset: number) {
@@ -333,15 +319,20 @@ export default function ThreeHero() {
 
     // Clean up
     return () => {
+      window.removeEventListener('pageshow', handlePageshow)
       isMounted.current = false
       timeoutIds.forEach((id) => window.clearTimeout(id))
-      canvas.removeEventListener('webglcontextlost', handleContextLost)
       window.removeEventListener('resize', handleResize)
       heroScroll.kill()
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill())
       geometry.dispose()
       material.dispose()
       textures.forEach((tex) => tex?.dispose())
+      try {
+        renderer.forceContextLoss()
+      } catch (e) {
+        console.warn("WebGL forceContextLoss failed:", e)
+      }
       renderer.dispose()
     }
   }, [])

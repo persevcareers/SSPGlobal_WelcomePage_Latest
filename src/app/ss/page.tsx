@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
 interface ServiceDetail {
   title: string
@@ -21,6 +21,25 @@ export default function SSPage() {
   })
   const [isSubmitted, setIsSubmitted] = useState(false)
   const [selectedServiceIndex, setSelectedServiceIndex] = useState(0)
+
+  const [homeUrl, setHomeUrl] = useState('/')
+  const [stiUrl, setStiUrl] = useState('https://sti.ssptechedu.com')
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const hostname = window.location.hostname
+      if (hostname.startsWith('sti.') || hostname.startsWith('ss.')) {
+        const parts = hostname.split('.')
+        const parentDomain = parts.slice(1).join('.')
+        const port = window.location.port ? `:${window.location.port}` : ''
+        setHomeUrl(`${window.location.protocol}//${parentDomain}${port}`)
+        setStiUrl(`${window.location.protocol}//sti.${parentDomain}${port}`)
+      } else if (hostname.includes('localhost') || hostname.includes('127.0.0.1') || hostname.includes('192.168.')) {
+        setHomeUrl('/')
+        setStiUrl('/sti')
+      }
+    }
+  }, [])
 
   const services: ServiceDetail[] = [
     {
@@ -141,7 +160,7 @@ export default function SSPage() {
           justifyContent: 'space-between',
           alignItems: 'center'
         }}>
-          <a href="/" style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+          <a href={homeUrl} style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
             <img src="/images/SSP.png" alt="SSP Logo" style={{ width: '44px', height: '44px', objectFit: 'contain', filter: 'brightness(1.2)' }} />
             <div style={{ display: 'flex', flexDirection: 'column' }}>
               <span style={{ fontWeight: 800, fontSize: '20px', color: 'white', letterSpacing: '0.05em' }}>SSP SOLUTIONS</span>
@@ -149,7 +168,7 @@ export default function SSPage() {
             </div>
           </a>
           <nav style={{ display: 'flex', gap: '24px', alignItems: 'center' }}>
-            <a href="/" style={{ fontSize: '14px', fontWeight: 600, color: '#94a3b8' }}>Home</a>
+            <a href={homeUrl} style={{ fontSize: '14px', fontWeight: 600, color: '#94a3b8' }}>Home</a>
             <a href="#vision" style={{ fontSize: '14px', fontWeight: 600, color: '#94a3b8' }}>Our Vision</a>
             <a href="#services" style={{ fontSize: '14px', fontWeight: 600, color: '#94a3b8' }}>Services</a>
             <a href="#industries" style={{ fontSize: '14px', fontWeight: 600, color: '#94a3b8' }}>Industries</a>
@@ -768,8 +787,8 @@ export default function SSPage() {
             <div>
               <h4 style={{ color: 'white', fontWeight: 700, fontSize: '15px', marginBottom: '16px' }}>Divisions</h4>
               <ul style={{ display: 'flex', flexDirection: 'column', gap: '10px', fontSize: '14px', padding: 0 }}>
-                <li><a href="/" style={{ color: '#64748b' }}>SSP Global Home</a></li>
-                <li><a href="https://sti.ssptechedu.com" style={{ color: '#64748b' }}>Software Training (STI)</a></li>
+                <li><a href={homeUrl} style={{ color: '#64748b' }}>SSP Global Home</a></li>
+                <li><a href={stiUrl} style={{ color: '#64748b' }}>Software Training (STI)</a></li>
                 <li><a href="#services" style={{ color: '#64748b' }}>Software Solutions (SS)</a></li>
               </ul>
             </div>

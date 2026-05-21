@@ -33,6 +33,25 @@ export default function STIPage() {
   const [isSubmitted, setIsSubmitted] = useState(false)
   const [activeFaq, setActiveFaq] = useState<number | null>(null)
 
+  const [homeUrl, setHomeUrl] = useState('/')
+  const [ssUrl, setSsUrl] = useState('https://ss.ssptechedu.com')
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const hostname = window.location.hostname
+      if (hostname.startsWith('sti.') || hostname.startsWith('ss.')) {
+        const parts = hostname.split('.')
+        const parentDomain = parts.slice(1).join('.')
+        const port = window.location.port ? `:${window.location.port}` : ''
+        setHomeUrl(`${window.location.protocol}//${parentDomain}${port}`)
+        setSsUrl(`${window.location.protocol}//ss.${parentDomain}${port}`)
+      } else if (hostname.includes('localhost') || hostname.includes('127.0.0.1') || hostname.includes('192.168.')) {
+        setHomeUrl('/')
+        setSsUrl('/ss')
+      }
+    }
+  }, [])
+
   const courses: Record<string, Course> = {
     devops: {
       id: 'devops',
@@ -236,7 +255,7 @@ export default function STIPage() {
           justifyContent: 'space-between',
           alignItems: 'center'
         }}>
-          <a href="/" style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+          <a href={homeUrl} style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
             <img src="/images/SSP.png" alt="SSP Logo" style={{ width: '44px', height: '44px', objectFit: 'contain' }} />
             <div style={{ display: 'flex', flexDirection: 'column' }}>
               <span style={{ fontWeight: 800, fontSize: '20px', color: '#0f172a', letterSpacing: '0.05em' }}>SSP STI</span>
@@ -244,7 +263,7 @@ export default function STIPage() {
             </div>
           </a>
           <nav style={{ display: 'flex', gap: '24px', alignItems: 'center' }}>
-            <a href="/" style={{ fontSize: '14px', fontWeight: 600, color: '#475569' }}>Home</a>
+            <a href={homeUrl} style={{ fontSize: '14px', fontWeight: 600, color: '#475569' }}>Home</a>
             <a href="#visionaries" style={{ fontSize: '14px', fontWeight: 600, color: '#475569' }}>Mentors</a>
             <a href="#why-choose" style={{ fontSize: '14px', fontWeight: 600, color: '#475569' }}>Why Choose Us</a>
             <a href="#courses" style={{ fontSize: '14px', fontWeight: 600, color: '#475569' }}>Courses</a>
@@ -910,9 +929,9 @@ export default function STIPage() {
             <div>
               <h4 style={{ color: 'white', fontWeight: 700, fontSize: '15px', marginBottom: '16px' }}>Divisions</h4>
               <ul style={{ display: 'flex', flexDirection: 'column', gap: '10px', fontSize: '14px', padding: 0 }}>
-                <li><a href="/" style={{ color: '#94a3b8' }}>SSP Global Home</a></li>
+                <li><a href={homeUrl} style={{ color: '#94a3b8' }}>SSP Global Home</a></li>
                 <li><a href="#courses" style={{ color: '#94a3b8' }}>Software Training (STI)</a></li>
-                <li><a href="https://ss.ssptechedu.com" style={{ color: '#94a3b8' }}>Software Solutions (SS)</a></li>
+                <li><a href={ssUrl} style={{ color: '#94a3b8' }}>Software Solutions (SS)</a></li>
               </ul>
             </div>
           </div>
