@@ -337,68 +337,7 @@ export default function ThreeHero() {
       {/* Canvas for Three.js WebGL frames */}
       <canvas id="hero-canvas" ref={canvasRef} />
 
-      {/* Loading Overlay */}
-      <div
-        style={{
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          width: '100%',
-          height: '100vh',
-          background: '#080808',
-          zIndex: 9,
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'center',
-          alignItems: 'center',
-          color: '#ffffff',
-          fontFamily: 'var(--font-inter)',
-          opacity: skeletonLoaded ? 0 : 1,
-          pointerEvents: skeletonLoaded ? 'none' : 'auto',
-          transition: 'opacity 0.8s ease, visibility 0.8s ease',
-          visibility: skeletonLoaded ? 'hidden' : 'visible',
-        }}
-      >
-        <div
-          style={{
-            fontSize: '24px',
-            fontWeight: 800,
-            letterSpacing: '0.1em',
-            marginBottom: '16px',
-            color: 'var(--orange)',
-          }}
-        >
-          SSP GLOBAL
-        </div>
-        <div
-          style={{
-            width: '200px',
-            height: '2px',
-            background: 'rgba(255,255,255,0.1)',
-            position: 'relative',
-            borderRadius: '2px',
-            overflow: 'hidden',
-          }}
-        >
-          <div
-            style={{
-              width: `${loadingProgress}%`,
-              height: '100%',
-              background: 'var(--orange)',
-              transition: 'width 0.1s ease',
-            }}
-          />
-        </div>
-        <div
-          style={{
-            fontSize: '12px',
-            color: 'rgba(255,255,255,0.4)',
-            marginTop: '8px',
-          }}
-        >
-          Hardware Accelerated Graphics Preloading ({loadingProgress}%)
-        </div>
-      </div>
+
 
       {/* Replicate Content Wrapper */}
       <div className="hero-content-wrapper">
