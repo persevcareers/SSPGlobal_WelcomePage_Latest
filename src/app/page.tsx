@@ -1025,6 +1025,214 @@ export default function HomePage() {
                   </li>
                 </ul>
               </div>
+
+              {/* Data Analytics */}
+              <div className="pro-card" style={{ ['--card-accent' as any]: '#06b6d4' }}>
+                <div className="pro-icon">
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                    <line x1="18" y1="20" x2="18" y2="10" />
+                    <line x1="12" y1="20" x2="12" y2="4" />
+                    <line x1="6" y1="20" x2="6" y2="14" />
+                  </svg>
+                </div>
+                <h3 style={{ fontSize: '24px', fontWeight: '700', color: '#0f172a', marginBottom: '16px' }}>Data Analytics</h3>
+                <p style={{ color: '#64748b', lineHeight: 1.6, marginBottom: '32px', fontSize: '15px' }}>
+                  Transforming raw data into actionable business intelligence through advanced visualization and processing.
+                </p>
+                <ul className="pro-list">
+                  <li className="pro-list-item">
+                    <svg className="pro-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
+                      <polyline points="20 6 9 17 4 12" />
+                    </svg>{' '}
+                    BI Dashboards
+                  </li>
+                  <li className="pro-list-item">
+                    <svg className="pro-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
+                      <polyline points="20 6 9 17 4 12" />
+                    </svg>{' '}
+                    Big Data Processing
+                  </li>
+                  <li className="pro-list-item">
+                    <svg className="pro-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
+                      <polyline points="20 6 9 17 4 12" />
+                    </svg>{' '}
+                    Real-time Monitoring
+                  </li>
+                </ul>
+              </div>
+
+              {/* Cyber Security */}
+              <div className="pro-card" style={{ ['--card-accent' as any]: '#ef4444' }}>
+                <div className="pro-icon">
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+                    <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                  </svg>
+                </div>
+                <h3 style={{ fontSize: '24px', fontWeight: '700', color: '#0f172a', marginBottom: '16px' }}>Cyber Security</h3>
+                <p style={{ color: '#64748b', lineHeight: 1.6, marginBottom: '32px', fontSize: '15px' }}>
+                  Protecting your digital assets with advanced threat detection, encryption, and robust security protocols.
+                </p>
+                <ul className="pro-list">
+                  <li className="pro-list-item">
+                    <svg className="pro-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
+                      <polyline points="20 6 9 17 4 12" />
+                    </svg>{' '}
+                    Threat Assessment
+                  </li>
+                  <li className="pro-list-item">
+                    <svg className="pro-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
+                      <polyline points="20 6 9 17 4 12" />
+                    </svg>{' '}
+                    Data Encryption
+                  </li>
+                  <li className="pro-list-item">
+                    <svg className="pro-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
+                      <polyline points="20 6 9 17 4 12" />
+                    </svg>{' '}
+                    Security Audits
+                  </li>
+                </ul>
+              </div>
+
+              {/* Product Design */}
+              <div className="pro-card" style={{ ['--card-accent' as any]: '#ec4899' }}>
+                <div className="pro-icon">
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M12 19l7-7 3 3-7 7-3-3z" />
+                    <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z" />
+                    <path d="M2 2l7.586 7.586" />
+                    <circle cx="11" cy="11" r="2" />
+                  </svg>
+                </div>
+                <h3 style={{ fontSize: '24px', fontWeight: '700', color: '#0f172a', marginBottom: '16px' }}>Product Design</h3>
+                <p style={{ color: '#64748b', lineHeight: 1.6, marginBottom: '32px', fontSize: '15px' }}>
+                  Creating intuitive and beautiful user interfaces that enhance engagement and deliver premium user experiences.
+                </p>
+                <ul className="pro-list">
+                  <li className="pro-list-item">
+                    <svg className="pro-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
+                      <polyline points="20 6 9 17 4 12" />
+                    </svg>{' '}
+                    User Research
+                  </li>
+                  <li className="pro-list-item">
+                    <svg className="pro-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
+                      <polyline points="20 6 9 17 4 12" />
+                    </svg>{' '}
+                    Interactive Prototypes
+                  </li>
+                  <li className="pro-list-item">
+                    <svg className="pro-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
+                      <polyline points="20 6 9 17 4 12" />
+                    </svg>{' '}
+                    Design Systems
+                  </li>
+                </ul>
+              </div>
+
+              {/* Automations */}
+              <div className="pro-card" style={{ ['--card-accent' as any]: '#10b981' }}>
+                <div className="pro-icon">
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                    <polyline points="23 4 23 10 17 10" />
+                    <polyline points="1 20 1 14 7 14" />
+                    <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15" />
+                  </svg>
+                </div>
+                <h3 style={{ fontSize: '24px', fontWeight: '700', color: '#0f172a', marginBottom: '16px' }}>Automations</h3>
+                <p style={{ color: '#64748b', lineHeight: 1.6, marginBottom: '32px', fontSize: '15px' }}>
+                  Streamlining business operations with intelligent RPA and custom workflow scripts to eliminate manual errors and save time.
+                </p>
+                <ul className="pro-list">
+                  <li className="pro-list-item">
+                    <svg className="pro-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
+                      <polyline points="20 6 9 17 4 12" />
+                    </svg>{' '}
+                    RPA Solutions
+                  </li>
+                  <li className="pro-list-item">
+                    <svg className="pro-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
+                      <polyline points="20 6 9 17 4 12" />
+                    </svg>{' '}
+                    Workflow Optimization
+                  </li>
+                  <li className="pro-list-item">
+                    <svg className="pro-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
+                      <polyline points="20 6 9 17 4 12" />
+                    </svg>{' '}
+                    Legacy System Automation
+                  </li>
+                </ul>
+              </div>
+
+              {/* Digital Transformation */}
+              <div className="pro-card" style={{ ['--card-accent' as any]: '#6366f1' }}>
+                <div className="pro-icon">
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                    <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+                  </svg>
+                </div>
+                <h3 style={{ fontSize: '24px', fontWeight: '700', color: '#0f172a', marginBottom: '16px' }}>Digital Transformation</h3>
+                <p style={{ color: '#64748b', lineHeight: 1.6, marginBottom: '32px', fontSize: '15px' }}>
+                  Guiding businesses through their digital evolution by modernizing legacy systems and integrating state-of-the-art tech.
+                </p>
+                <ul className="pro-list">
+                  <li className="pro-list-item">
+                    <svg className="pro-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
+                      <polyline points="20 6 9 17 4 12" />
+                    </svg>{' '}
+                    Legacy Modernization
+                  </li>
+                  <li className="pro-list-item">
+                    <svg className="pro-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
+                      <polyline points="20 6 9 17 4 12" />
+                    </svg>{' '}
+                    Strategic Consulting
+                  </li>
+                  <li className="pro-list-item">
+                    <svg className="pro-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
+                      <polyline points="20 6 9 17 4 12" />
+                    </svg>{' '}
+                    Tech Integration
+                  </li>
+                </ul>
+              </div>
+
+              {/* Custom Software Development */}
+              <div className="pro-card" style={{ ['--card-accent' as any]: '#f43f5e' }}>
+                <div className="pro-icon">
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                    <polygon points="12 2 2 7 12 12 22 7 12 2" />
+                    <polyline points="2 17 12 22 22 17" />
+                    <polyline points="2 12 12 17 22 12" />
+                  </svg>
+                </div>
+                <h3 style={{ fontSize: '24px', fontWeight: '700', color: '#0f172a', marginBottom: '16px' }}>Custom Software Development</h3>
+                <p style={{ color: '#64748b', lineHeight: 1.6, marginBottom: '32px', fontSize: '15px' }}>
+                  Tailor-made software built from the ground up to address your unique business challenges, ensuring scalability and success.
+                </p>
+                <ul className="pro-list">
+                  <li className="pro-list-item">
+                    <svg className="pro-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
+                      <polyline points="20 6 9 17 4 12" />
+                    </svg>{' '}
+                    Enterprise ERPs
+                  </li>
+                  <li className="pro-list-item">
+                    <svg className="pro-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
+                      <polyline points="20 6 9 17 4 12" />
+                    </svg>{' '}
+                    CRM Solutions
+                  </li>
+                  <li className="pro-list-item">
+                    <svg className="pro-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
+                      <polyline points="20 6 9 17 4 12" />
+                    </svg>{' '}
+                    Industry Specific Apps
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </section>
@@ -1133,23 +1341,232 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* WHY CHOOSE SSP STI (CARDS) */}
-            <div data-fade="up" style={{ marginTop: '80px', marginBottom: '80px' }}>
-              <h3
-                style={{
-                  fontFamily: 'var(--font-inter)',
-                  fontSize: '28px',
-                  fontWeight: 800,
-                  color: '#0a192f',
-                  marginBottom: '40px',
-                }}
-              >
-                Why Choose SSP STI?
+            {/* Training/Placement Cards Grid */}
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '32px', marginTop: '60px' }}>
+              {/* Trainings */}
+              <div className="pro-card" style={{ ['--card-accent' as any]: '#3b82f6' }}>
+                <div className="pro-icon">
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
+                    <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
+                  </svg>
+                </div>
+                <h3 style={{ fontSize: '24px', fontWeight: '700', color: '#0a192f', marginBottom: '16px' }}>Trainings</h3>
+                <p style={{ color: '#64748b', lineHeight: 1.6, marginBottom: 0 }}>
+                  Comprehensive, hands-on training programs designed to bridge the gap between academic learning and industry requirements.
+                </p>
+              </div>
+
+              {/* Crash Courses */}
+              <div className="pro-card" style={{ ['--card-accent' as any]: '#8b5cf6' }}>
+                <div className="pro-icon">
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+                  </svg>
+                </div>
+                <h3 style={{ fontSize: '24px', fontWeight: '700', color: '#0a192f', marginBottom: '16px' }}>Crash Courses</h3>
+                <p style={{ color: '#64748b', lineHeight: 1.6, marginBottom: 0 }}>
+                  Short-term, intensive learning modules focused on rapidly mastering specific technologies and tools.
+                </p>
+              </div>
+
+              {/* ADAS2 */}
+              <div className="pro-card" style={{ ['--card-accent' as any]: '#f59e0b' }}>
+                <div className="pro-icon">
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                    <rect x="4" y="4" width="16" height="16" rx="2" ry="2" />
+                    <rect x="9" y="9" width="6" height="6" />
+                    <line x1="9" y1="1" x2="9" y2="4" />
+                    <line x1="15" y1="1" x2="15" y2="4" />
+                    <line x1="9" y1="20" x2="9" y2="23" />
+                    <line x1="15" y1="20" x2="15" y2="23" />
+                    <line x1="20" y1="9" x2="23" y2="9" />
+                    <line x1="20" y1="14" x2="23" y2="14" />
+                    <line x1="1" y1="9" x2="4" y2="9" />
+                    <line x1="1" y1="14" x2="4" y2="14" />
+                  </svg>
+                </div>
+                <h3 style={{ fontSize: '24px', fontWeight: '700', color: '#0a192f', marginBottom: '16px' }}>ADAS2</h3>
+                <p style={{ color: '#64748b', lineHeight: 1.6, marginBottom: 0 }}>
+                  Specialized training in cutting-edge automation, electronic control systems, and advanced technologies.
+                </p>
+              </div>
+
+              {/* Workshops */}
+              <div className="pro-card" style={{ ['--card-accent' as any]: '#06b6d4' }}>
+                <div className="pro-icon">
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                    <circle cx="9" cy="7" r="4" />
+                    <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                  </svg>
+                </div>
+                <h3 style={{ fontSize: '24px', fontWeight: '700', color: '#0a192f', marginBottom: '16px' }}>Workshops</h3>
+                <p style={{ color: '#64748b', lineHeight: 1.6, marginBottom: 0 }}>
+                  Interactive, practical sessions led by industry experts covering the latest tech trends and hands-on skills.
+                </p>
+              </div>
+
+              {/* Placements */}
+              <div className="pro-card" style={{ ['--card-accent' as any]: '#10b981' }}>
+                <div className="pro-icon">
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                    <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
+                    <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
+                  </svg>
+                </div>
+                <h3 style={{ fontSize: '24px', fontWeight: '700', color: '#0a192f', marginBottom: '16px' }}>Placements</h3>
+                <p style={{ color: '#64748b', lineHeight: 1.6, marginBottom: 0 }}>
+                  Dedicated career support, corporate tie-ups, and comprehensive interview preparation to secure your dream job.
+                </p>
+              </div>
+
+              {/* Internship */}
+              <div className="pro-card" style={{ ['--card-accent' as any]: '#ec4899' }}>
+                <div className="pro-icon">
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                    <circle cx="12" cy="8" r="7" />
+                    <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88" />
+                  </svg>
+                </div>
+                <h3 style={{ fontSize: '24px', fontWeight: '700', color: '#0a192f', marginBottom: '16px' }}>Internship</h3>
+                <p style={{ color: '#64748b', lineHeight: 1.6, marginBottom: 0 }}>
+                  Real-world industry exposure through structured internship programs working on live production projects.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* WHY CHOOSE SSP */}
+        <section
+          className="why-choose-ssp"
+          id="why-choose-ssp"
+          style={{ padding: 'clamp(80px, 8vw, 140px) 0', background: '#ffffff', position: 'relative', zIndex: 2 }}
+        >
+          <div className="container" style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 clamp(16px, 3vw, 58px)' }}>
+            <h2 className="premium-title" data-fade="up" style={{
+              fontFamily: 'var(--font-inter)',
+              fontWeight: 800,
+              fontSize: 'clamp(36px, 4.5vw, 56px)',
+              color: '#0f172a',
+              textAlign: 'center',
+              marginBottom: 'clamp(40px, 5vw, 80px)',
+              letterSpacing: '-0.02em',
+            }}>
+              Why Choose <span style={{ color: '#1e40af' }}>SSP?</span>
+            </h2>
+
+            {/* SECTION 1: Software Solutions */}
+            <div style={{ marginBottom: '80px' }} data-fade="up">
+              <h3 className="premium-subtitle" style={{
+                fontFamily: 'var(--font-inter)',
+                fontWeight: 700,
+                fontSize: '24px',
+                color: '#0f172a',
+                marginBottom: '40px',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '16px',
+                letterSpacing: '-0.01em',
+              }}>
+                SSP SS (Software Solutions)
+                <span style={{ flex: 1, height: '1px', background: '#f1f5f9' }} />
               </h3>
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '24px' }}>
                 <div className="premium-card">
                   <div className="premium-icon-box">
-                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                      <circle cx="9" cy="7" r="4" />
+                      <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                      <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                    </svg>
+                  </div>
+                  <h4 className="premium-card-title">Client Focused</h4>
+                  <p className="premium-card-desc">We prioritize client success through personalized software solutions and long-term partnerships.</p>
+                </div>
+
+                <div className="premium-card">
+                  <div className="premium-icon-box">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                      <polyline points="9 12 11 14 15 10" />
+                    </svg>
+                  </div>
+                  <h4 className="premium-card-title">Quality Assurance</h4>
+                  <p className="premium-card-desc">Delivering reliable, secure, and high-performance solutions with strict quality standards.</p>
+                </div>
+
+                <div className="premium-card">
+                  <div className="premium-icon-box">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                      <circle cx="12" cy="12" r="3" />
+                    </svg>
+                  </div>
+                  <h4 className="premium-card-title">Transparency</h4>
+                  <p className="premium-card-desc">Clear communication, honest processes, and complete project visibility at every stage.</p>
+                </div>
+
+                <div className="premium-card">
+                  <div className="premium-icon-box">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                      <rect x="16" y="16" width="6" height="6" rx="1" />
+                      <rect x="2" y="16" width="6" height="6" rx="1" />
+                      <rect x="9" y="2" width="6" height="6" rx="1" />
+                      <path d="M5 16v-3a4 4 0 0 1 4-4h6a4 4 0 0 1 4 4v3" />
+                      <path d="M12 12V8" />
+                    </svg>
+                  </div>
+                  <h4 className="premium-card-title">Multiple Best Solutions</h4>
+                  <p className="premium-card-desc">We provide innovative and scalable technology solutions tailored to different business needs.</p>
+                </div>
+
+                <div className="premium-card">
+                  <div className="premium-icon-box">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                    </svg>
+                  </div>
+                  <h4 className="premium-card-title">Trust with Clients</h4>
+                  <p className="premium-card-desc">Building long-lasting relationships through commitment, integrity, and consistent delivery.</p>
+                </div>
+
+                <div className="premium-card">
+                  <div className="premium-icon-box">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                      <circle cx="12" cy="8" r="7" />
+                      <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88" />
+                    </svg>
+                  </div>
+                  <h4 className="premium-card-title">Experienced Team</h4>
+                  <p className="premium-card-desc">Skilled professionals with expertise across modern technologies and real-world projects.</p>
+                </div>
+              </div>
+            </div>
+
+            {/* SECTION 2: STI Training */}
+            <div data-fade="up">
+              <h3 className="premium-subtitle" style={{
+                fontFamily: 'var(--font-inter)',
+                fontWeight: 700,
+                fontSize: '24px',
+                color: '#0f172a',
+                marginBottom: '40px',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '16px',
+                letterSpacing: '-0.01em',
+              }}>
+                SSP STI (Software Training Institute)
+                <span style={{ flex: 1, height: '1px', background: '#f1f5f9' }} />
+              </h3>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '24px' }}>
+                <div className="premium-card">
+                  <div className="premium-icon-box">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                       <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
                       <circle cx="12" cy="7" r="4" />
                     </svg>
@@ -1160,7 +1577,65 @@ export default function HomePage() {
 
                 <div className="premium-card">
                   <div className="premium-icon-box">
-                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                      <circle cx="9" cy="7" r="4" />
+                      <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                      <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                    </svg>
+                  </div>
+                  <h4 className="premium-card-title">Limited Batch Size</h4>
+                  <p className="premium-card-desc">Small focused batches for better interaction and effective learning.</p>
+                </div>
+
+                <div className="premium-card">
+                  <div className="premium-icon-box">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                      <polygon points="12 2 2 7 12 12 22 7 12 2" />
+                      <polyline points="2 17 12 22 22 17" />
+                      <polyline points="2 12 12 17 22 12" />
+                    </svg>
+                  </div>
+                  <h4 className="premium-card-title">Multi Domain Skill Learning</h4>
+                  <p className="premium-card-desc">Learn multiple industry-ready technologies under one platform.</p>
+                </div>
+
+                <div className="premium-card">
+                  <div className="premium-icon-box">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                      <circle cx="12" cy="12" r="10" />
+                      <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76" />
+                    </svg>
+                  </div>
+                  <h4 className="premium-card-title">Career-Focused Modern Curriculum</h4>
+                  <p className="premium-card-desc">Updated syllabus designed according to current IT industry requirements.</p>
+                </div>
+
+                <div className="premium-card">
+                  <div className="premium-icon-box">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                      <polyline points="16 18 22 12 16 6" />
+                      <polyline points="8 6 2 12 8 18" />
+                    </svg>
+                  </div>
+                  <h4 className="premium-card-title">Dedicated Practice</h4>
+                  <p className="premium-card-desc">Continuous hands-on sessions, assignments, and real-time project exposure.</p>
+                </div>
+
+                <div className="premium-card">
+                  <div className="premium-icon-box">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                      <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
+                      <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
+                    </svg>
+                  </div>
+                  <h4 className="premium-card-title">Placement Assistance</h4>
+                  <p className="premium-card-desc">Resume building, interview preparation, and placement support for students.</p>
+                </div>
+
+                <div className="premium-card">
+                  <div className="premium-icon-box">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                       <circle cx="12" cy="12" r="10" />
                       <circle cx="12" cy="12" r="6" />
                       <circle cx="12" cy="12" r="2" />
@@ -1172,12 +1647,27 @@ export default function HomePage() {
 
                 <div className="premium-card">
                   <div className="premium-icon-box">
-                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                       <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
                     </svg>
                   </div>
                   <h4 className="premium-card-title">Ethical Education</h4>
                   <p className="premium-card-desc">Combining technical excellence with discipline, values, and professional ethics.</p>
+                </div>
+
+                <div className="premium-card">
+                  <div className="premium-icon-box">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                      <circle cx="12" cy="12" r="10" />
+                      <circle cx="12" cy="12" r="4" />
+                      <line x1="4.93" y1="4.93" x2="9.17" y2="9.17" />
+                      <line x1="14.83" y1="14.83" x2="19.07" y2="19.07" />
+                      <line x1="14.83" y1="9.17" x2="19.07" y2="4.93" />
+                      <line x1="4.93" y1="19.07" x2="9.17" y2="14.83" />
+                    </svg>
+                  </div>
+                  <h4 className="premium-card-title">Lifetime Support</h4>
+                  <p className="premium-card-desc">Continued mentorship and career guidance even after course completion.</p>
                 </div>
               </div>
             </div>
@@ -1318,6 +1808,31 @@ export default function HomePage() {
                       <p>
                         Continuous guidance for both students and clients. Our relationship is a long-term
                         commitment to your ongoing success journey.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Accordion Item 6 */}
+                <div className={`accordion-item ${activeAccordion === 5 ? 'active' : ''}`} data-fade="up">
+                  <div className="accordion-header" onClick={() => setActiveAccordion(activeAccordion === 5 ? -1 : 5)}>
+                    <span className="accordion-num">06</span>
+                    <h4 className="accordion-title">Strategic Partnership</h4>
+                    <span className="accordion-toggle">{activeAccordion === 5 ? '-' : '+'}</span>
+                  </div>
+                  <div
+                    className="accordion-body"
+                    style={{
+                      height: activeAccordion === 5 ? 'auto' : '0px',
+                      transition: 'height 0.4s ease',
+                      paddingLeft: '50px',
+                      overflow: 'hidden',
+                    }}
+                  >
+                    <div className="accordion-body-inner" style={{ paddingBottom: '32px' }}>
+                      <p>
+                        We align with your vision, providing technical expertise and strategic value to ensure your
+                        business stays ahead of the curve.
                       </p>
                     </div>
                   </div>
