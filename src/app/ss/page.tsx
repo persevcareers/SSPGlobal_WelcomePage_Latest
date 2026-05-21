@@ -811,7 +811,7 @@ export default function SSPage() {
               <h4 style={{ color: 'white', fontWeight: 700, fontSize: '15px', marginBottom: '16px' }}>Divisions</h4>
               <ul style={{ display: 'flex', flexDirection: 'column', gap: '10px', fontSize: '14px', padding: 0 }}>
                 <li><a href={homeUrl} onClick={(e) => handleSmoothNavigation(homeUrl, e)} style={{ color: '#64748b' }}>SSP Global Home</a></li>
-                <li><a href={stiUrl} onClick={(e) => handleSmoothNavigation(stiUrl, e)} style={{ color: '#64748b' }}>Software Training (STI)</a></li>
+                <li><a href={stiUrl} target="_blank" rel="noopener noreferrer" style={{ color: '#64748b' }}>Software Training (STI)</a></li>
                 <li><a href="#services" style={{ color: '#64748b' }}>Software Solutions (SS)</a></li>
               </ul>
             </div>

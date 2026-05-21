@@ -285,17 +285,17 @@ export default function HomePage() {
                 </a>
               </li>
               <li>
-                <a href={trainingUrl} onClick={(e) => handleSmoothNavigation(trainingUrl, e)}>
+                <a href={trainingUrl} target="_blank" rel="noopener noreferrer">
                   Training
                 </a>
               </li>
               <li>
-                <a href={trainingUrl} onClick={(e) => handleSmoothNavigation(trainingUrl, e)}>
+                <a href={trainingUrl} target="_blank" rel="noopener noreferrer">
                   Placements
                 </a>
               </li>
               <li>
-                <a href={ssUrl} onClick={(e) => handleSmoothNavigation(ssUrl, e)}>
+                <a href={ssUrl} target="_blank" rel="noopener noreferrer">
                   Software Solutions
                 </a>
               </li>
@@ -386,7 +386,8 @@ export default function HomePage() {
             <div className="s-split-cards" id="s-split-cards">
               <a
                 href={trainingUrl}
-                onClick={(e) => handleSmoothNavigation(trainingUrl, e)}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="s-card s-card-left"
                 id="s-card-sti"
                 style={{ ['--theme-color' as any]: '15 89% 50%' }}
@@ -425,7 +426,8 @@ export default function HomePage() {
 
               <a
                 href={ssUrl}
-                onClick={(e) => handleSmoothNavigation(ssUrl, e)}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="s-card s-card-right"
                 id="s-card-ssp"
                 style={{ ['--theme-color' as any]: '210 100% 50%' }}
@@ -2023,13 +2025,13 @@ export default function HomePage() {
             <h5 className="footer-heading">Divisions</h5>
             <ul>
               <li>
-                <a href={trainingUrl} onClick={(e) => handleSmoothNavigation(trainingUrl, e)}>Training</a>
+                <a href={trainingUrl} target="_blank" rel="noopener noreferrer">Training</a>
               </li>
               <li>
-                <a href={trainingUrl} onClick={(e) => handleSmoothNavigation(trainingUrl, e)}>Placements</a>
+                <a href={trainingUrl} target="_blank" rel="noopener noreferrer">Placements</a>
               </li>
               <li>
-                <a href={ssUrl} onClick={(e) => handleSmoothNavigation(ssUrl, e)}>Software Solutions</a>
+                <a href={ssUrl} target="_blank" rel="noopener noreferrer">Software Solutions</a>
               </li>
               <li>
                 <a href="#leadership">Leadership</a>

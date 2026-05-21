@@ -955,7 +955,7 @@ export default function STIPage() {
               <ul style={{ display: 'flex', flexDirection: 'column', gap: '10px', fontSize: '14px', padding: 0 }}>
                 <li><a href={homeUrl} onClick={(e) => handleSmoothNavigation(homeUrl, e)} style={{ color: '#94a3b8' }}>SSP Global Home</a></li>
                 <li><a href="#courses" style={{ color: '#94a3b8' }}>Software Training (STI)</a></li>
-                <li><a href={ssUrl} onClick={(e) => handleSmoothNavigation(ssUrl, e)} style={{ color: '#94a3b8' }}>Software Solutions (SS)</a></li>
+                <li><a href={ssUrl} target="_blank" rel="noopener noreferrer" style={{ color: '#94a3b8' }}>Software Solutions (SS)</a></li>
               </ul>
             </div>
           </div>
