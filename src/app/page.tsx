@@ -1996,20 +1996,10 @@ export default function HomePage() {
                 marginLeft: '-30px',
               }}
             >
-              <img
-                src="/images/SSP.png"
-                alt="SSP Global"
-                style={{
-                  height: '450px',
-                  objectFit: 'contain',
-                  filter: 'brightness(0) invert(1)',
-                }}
-              />
+              <span className="footer-logo-text" style={{ fontWeight: 800, fontStyle: 'italic', fontSize: '2.5rem', letterSpacing: '0.05em' }}>SSP GLOBAL</span>
             </a>
             <p>
-              SSP Global – A visionary Software Organization in Tirupati empowering individuals and
-              businesses through specialized software training, placement assistance, AI solutions, DevOps
-              services, and cutting-edge custom software development.
+              A visionary corporate group empowering individuals and businesses through specialized education and cutting-edge tech solutions.
             </p>
           </div>
           <div className="footer-col footer-menu">
