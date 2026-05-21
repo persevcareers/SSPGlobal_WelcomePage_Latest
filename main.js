@@ -55,9 +55,12 @@ function initHero() {
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
 
+  let lastDrawnFrame = -1;
+
   window.addEventListener('resize', () => {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
+    lastDrawnFrame = -1; // force redraw on resize
     render();
   });
 
@@ -84,9 +87,12 @@ function initHero() {
   }
 
   function render() {
-    if (images[seq.frame] && images[seq.frame].complete) {
+    const frameIndex = Math.round(seq.frame);
+    if (frameIndex === lastDrawnFrame) return;
+
+    if (images[frameIndex] && images[frameIndex].complete) {
       context.clearRect(0, 0, canvas.width, canvas.height);
-      const img = images[seq.frame];
+      const img = images[frameIndex];
       const canvasRatio = canvas.width / canvas.height;
       const imgRatio = img.width / img.height;
       
@@ -104,6 +110,7 @@ function initHero() {
       }
 
       context.drawImage(img, offsetX, offsetY, drawWidth, drawHeight);
+      lastDrawnFrame = frameIndex;
     }
   }
 
