@@ -271,10 +271,6 @@ export default function HomePage() {
             <img
               src="/images/SSP.png"
               alt="SSP Global"
-              onError={(e) => {
-                const target = e.currentTarget
-                target.outerHTML = "<span class='logo-text'>SSP GLOBAL</span>"
-              }}
             />
           </a>
           <nav className={`header-nav ${menuOpen ? 'open' : ''}`} id="header-nav">
@@ -2007,11 +2003,6 @@ export default function HomePage() {
                   height: '450px',
                   objectFit: 'contain',
                   filter: 'brightness(0) invert(1)',
-                }}
-                onError={(e) => {
-                  const target = e.currentTarget
-                  target.outerHTML =
-                    "<span class='footer-logo-text' style='font-weight:800; font-style:italic;'>SSP GLOBAL</span>"
                 }}
               />
             </a>
