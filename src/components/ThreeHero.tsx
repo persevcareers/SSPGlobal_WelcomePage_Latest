@@ -145,13 +145,19 @@ export default function ThreeHero() {
 
     let loadedCount = 0
     const totalToLoad = frameCount
+    const isMounted = { current: true }
+    const timeoutIds: number[] = []
 
     steps.forEach((step, stepIdx) => {
-      setTimeout(() => {
+      const id = window.setTimeout(() => {
         step.indices.forEach((index) => {
           textureLoader.load(
             currentFramePath(index),
             (texture) => {
+              if (!isMounted.current) {
+                texture.dispose()
+                return
+              }
               // Configure texture for sharp layout and optimal GPU caching
               texture.minFilter = THREE.LinearFilter
               texture.magFilter = THREE.LinearFilter
@@ -184,6 +190,7 @@ export default function ThreeHero() {
           )
         })
       }, step.delay)
+      timeoutIds.push(id)
     })
 
     // 7. Connect scroll position to sequence frame via GSAP
@@ -305,12 +312,19 @@ export default function ThreeHero() {
 
     // Clean up
     return () => {
+      isMounted.current = false
+      timeoutIds.forEach((id) => window.clearTimeout(id))
       window.removeEventListener('resize', handleResize)
       heroScroll.kill()
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill())
       geometry.dispose()
       material.dispose()
       textures.forEach((tex) => tex?.dispose())
+      try {
+        renderer.forceContextLoss()
+      } catch (e) {
+        console.warn("WebGL forceContextLoss failed:", e)
+      }
       renderer.dispose()
     }
   }, [])
