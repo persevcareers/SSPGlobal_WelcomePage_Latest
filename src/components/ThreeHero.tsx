@@ -46,7 +46,7 @@ export default function ThreeHero() {
     const textures: (THREE.Texture | null)[] = new Array(frameCount).fill(null)
 
     const currentFramePath = (index: number) =>
-      `/Frame/frame_${String(index).padStart(3, '0')}_delay-0.041s.png`
+      `/Frame/frame_${String(index).padStart(3, '0')}_delay-0.041s.webp`
 
     const seq = { frame: 0 }
     let lastDrawnFrame = -1
