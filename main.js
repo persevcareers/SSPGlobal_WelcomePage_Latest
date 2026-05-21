@@ -71,33 +71,60 @@ function initHero() {
 
   const images = [];
   const seq = { frame: 0 };
-
   let loadedCount = 0;
+
+  // Initialize the image elements array empty first
   for (let i = 0; i < frameCount; i++) {
     const img = new Image();
-    img.src = currentFrame(i);
     img.readyToDraw = false;
-
-    const handleLoad = () => {
-      img.readyToDraw = true;
-      loadedCount++;
-      // Render if it's the first frame loaded, or if it's the exact frame we are currently waiting for
-      if (loadedCount === 1 || Math.round(seq.frame) === i) {
-        render();
-      }
-    };
-
-    if (img.decode) {
-      img.decode().then(handleLoad).catch(() => {
-        // Fallback to standard onload if decode fails
-        img.onload = handleLoad;
-      });
-    } else {
-      img.onload = handleLoad;
-    }
-    
     images.push(img);
   }
+
+  // Generate sequence indices for each batch
+  function getIndices(interval, offset) {
+    const arr = [];
+    for (let i = offset; i < frameCount; i += interval) {
+      arr.push(i);
+    }
+    return arr;
+  }
+
+  // Batched progressive loading schedule
+  const steps = [
+    { indices: getIndices(16, 0), delay: 0 },     // Immediate skeleton (16 frames)
+    { indices: getIndices(16, 8), delay: 600 },   // Fill gaps (15 frames)
+    { indices: getIndices(8, 4), delay: 1500 },   // Build detail (30 frames)
+    { indices: getIndices(4, 2), delay: 3000 },   // 30fps smooth (60 frames)
+    { indices: getIndices(2, 1), delay: 5000 }    // Full 60fps (120 frames)
+  ];
+
+  steps.forEach((step) => {
+    setTimeout(() => {
+      step.indices.forEach((index) => {
+        const img = images[index];
+        // Start loading the source
+        img.src = currentFrame(index);
+
+        const handleLoad = () => {
+          if (img.readyToDraw) return;
+          img.readyToDraw = true;
+          loadedCount++;
+          // Render if it's the first frame loaded, or if it's the exact frame we are currently waiting for
+          if (loadedCount === 1 || Math.round(seq.frame) === index) {
+            render();
+          }
+        };
+
+        if (img.decode) {
+          img.decode().then(handleLoad).catch(() => {
+            img.onload = handleLoad;
+          });
+        } else {
+          img.onload = handleLoad;
+        }
+      });
+    }, step.delay);
+  });
 
   function render() {
     const targetFrameIndex = Math.round(seq.frame);
