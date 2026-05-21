@@ -76,42 +76,72 @@ function initHero() {
   for (let i = 0; i < frameCount; i++) {
     const img = new Image();
     img.src = currentFrame(i);
-    img.onload = () => {
+    img.readyToDraw = false;
+
+    const handleLoad = () => {
+      img.readyToDraw = true;
       loadedCount++;
-      // Render the first frame as soon as it's ready
-      if (loadedCount === 1) {
+      // Render if it's the first frame loaded, or if it's the exact frame we are currently waiting for
+      if (loadedCount === 1 || Math.round(seq.frame) === i) {
         render();
       }
     };
+
+    if (img.decode) {
+      img.decode().then(handleLoad).catch(() => {
+        // Fallback to standard onload if decode fails
+        img.onload = handleLoad;
+      });
+    } else {
+      img.onload = handleLoad;
+    }
+    
     images.push(img);
   }
 
   function render() {
-    const frameIndex = Math.round(seq.frame);
-    if (frameIndex === lastDrawnFrame) return;
-
-    if (images[frameIndex] && images[frameIndex].complete) {
-      context.clearRect(0, 0, canvas.width, canvas.height);
-      const img = images[frameIndex];
-      const canvasRatio = canvas.width / canvas.height;
-      const imgRatio = img.width / img.height;
-      
-      let drawWidth = canvas.width;
-      let drawHeight = canvas.height;
-      let offsetX = 0;
-      let offsetY = 0;
-
-      if (imgRatio > canvasRatio) {
-        drawWidth = canvas.height * imgRatio;
-        offsetX = (canvas.width - drawWidth) / 2;
-      } else {
-        drawHeight = canvas.width / imgRatio;
-        offsetY = (canvas.height - drawHeight) / 2;
+    const targetFrameIndex = Math.round(seq.frame);
+    
+    let frameToDraw = targetFrameIndex;
+    
+    // Fallback logic if the exact frame isn't ready
+    if (!images[targetFrameIndex] || !images[targetFrameIndex].readyToDraw) {
+      let found = -1;
+      for (let i = 1; i < frameCount; i++) {
+        let down = targetFrameIndex - i;
+        let up = targetFrameIndex + i;
+        if (down >= 0 && images[down] && images[down].readyToDraw) { found = down; break; }
+        if (up < frameCount && images[up] && images[up].readyToDraw) { found = up; break; }
       }
-
-      context.drawImage(img, offsetX, offsetY, drawWidth, drawHeight);
-      lastDrawnFrame = frameIndex;
+      if (found !== -1) {
+        frameToDraw = found;
+      } else {
+        return; // nothing is ready yet
+      }
     }
+
+    if (frameToDraw === lastDrawnFrame) return;
+
+    context.clearRect(0, 0, canvas.width, canvas.height);
+    const img = images[frameToDraw];
+    const canvasRatio = canvas.width / canvas.height;
+    const imgRatio = img.width / img.height;
+    
+    let drawWidth = canvas.width;
+    let drawHeight = canvas.height;
+    let offsetX = 0;
+    let offsetY = 0;
+
+    if (imgRatio > canvasRatio) {
+      drawWidth = canvas.height * imgRatio;
+      offsetX = (canvas.width - drawWidth) / 2;
+    } else {
+      drawHeight = canvas.width / imgRatio;
+      offsetY = (canvas.height - drawHeight) / 2;
+    }
+
+    context.drawImage(img, offsetX, offsetY, drawWidth, drawHeight);
+    lastDrawnFrame = frameToDraw;
   }
 
   // Frame sequence animation tied to hero section scroll
