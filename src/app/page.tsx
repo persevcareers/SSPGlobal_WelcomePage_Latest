@@ -2038,7 +2038,7 @@ export default function HomePage() {
             <h5 className="footer-heading mt">Socials</h5>
             <div className="social-icons">
               <a
-                href="https://www.instagram.com/ssperseverance_institute/"
+                href="https://www.instagram.com/sspglobaltech_official/"
                 target="_blank"
                 aria-label="Instagram"
               >
